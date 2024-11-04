@@ -6,5 +6,5 @@ void main() throws NoSuchFieldException, IllegalAccessException {
 
   var complex = new Complex(1.0, 2.0);
   field.set(complex, 3.0);
-  println(complex);
+  System.out.println(complex);
 }
