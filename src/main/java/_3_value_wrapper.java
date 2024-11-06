@@ -9,8 +9,8 @@ class _3_value_wrapper {
     var i2 = Integer.valueOf(1024);
     System.out.println(i2);
 
-    //System.out.println(i1 == i2);
-    //System.out.println(i1.equals(i2));
+    System.out.println(i1 == i2);
+    System.out.println(i1.equals(i2));
 
   }
 }
