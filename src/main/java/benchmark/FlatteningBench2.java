@@ -50,7 +50,7 @@ public class FlatteningBench2 {
     Collections.shuffle(Arrays.asList(cities), new Random(0));
     this.cities = cities;
 
-    var cityBangs = (City[]) ValueClass.newNullRestrictedArray(City.class, 36_000);
+    var cityBangs = (City[]) ValueClass.newNullRestrictedNonAtomicArray(City.class, 36_000, new City(null, new Population(0)));
     System.arraycopy(cities, 0, cityBangs, 0, cities.length);
     this.cityBangs = cityBangs;
   }
