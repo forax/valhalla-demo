@@ -29,20 +29,20 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.3</version>
+            <version>5.14.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>com.google.errorprone</groupId>
             <artifactId>error_prone_core</artifactId>
-            <version>2.35.1</version>
+            <version>2.43.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.uber.nullaway</groupId>
             <artifactId>nullaway</artifactId>
-            <version>0.12.1</version>
+            <version>0.12.10</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>2.0.21</version>
+            <version>2.2.20</version>
         </dependency>
 
         <dependency>
@@ -75,7 +75,7 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
-                <version>2.0.21</version>
+                <version>2.2.20</version>
                 <extensions>true</extensions>
                 <executions>
                     <execution>
@@ -107,14 +107,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
+                <version>3.14.1</version>
                 <executions>
-                    <!-- Replacing default-compile as it is treated specially by Maven -->
+                    <!-- Replacing default-compile as it is treated especially by Maven -->
                     <execution>
                         <id>default-compile</id>
                         <phase>none</phase>
                     </execution>
-                    <!-- Replacing default-testCompile as it is treated specially by Maven -->
+                    <!-- Replacing default-testCompile as it is treated especially by Maven -->
                     <execution>
                         <id>default-testCompile</id>
                         <phase>none</phase>
@@ -161,12 +161,12 @@
                         <path>
                             <groupId>com.google.errorprone</groupId>
                             <artifactId>error_prone_core</artifactId>
-                            <version>2.35.1</version>
+                            <version>2.43.0</version>
                         </path>
                         <path>
                             <groupId>com.uber.nullaway</groupId>
                             <artifactId>nullaway</artifactId>
-                            <version>0.12.1</version>
+                            <version>0.12.10</version>
                         </path>
                         <path>
                             <groupId>org.openjdk.jmh</groupId>
@@ -180,7 +180,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>3.5.4</version>
                 <configuration>
                     <argLine>--enable-preview --add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED --add-exports=java.base/jdk.internal.value=ALL-UNNAMED</argLine>
                 </configuration>
@@ -189,7 +189,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.6.1</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
