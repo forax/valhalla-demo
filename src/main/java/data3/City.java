@@ -5,7 +5,6 @@ import org.jspecify.annotations.NonNull;
 import java.util.Objects;
 
 @jdk.internal.vm.annotation.LooselyConsistentValue
-@jdk.internal.vm.annotation.ImplicitlyConstructible
 public value class City {
   private final String name;
   private final @jdk.internal.vm.annotation.NullRestricted @NonNull Population population;

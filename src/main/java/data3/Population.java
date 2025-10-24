@@ -4,7 +4,6 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.Objects;
 
-@jdk.internal.vm.annotation.ImplicitlyConstructible
 public value class Population {
   private int value;
 

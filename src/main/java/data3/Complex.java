@@ -1,7 +1,6 @@
 package data3;
 
 @jdk.internal.vm.annotation.LooselyConsistentValue
-@jdk.internal.vm.annotation.ImplicitlyConstructible
 public value class Complex {
   private final double re;
   private final double im;
