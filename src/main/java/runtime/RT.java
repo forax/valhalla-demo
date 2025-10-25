@@ -1,4 +1,4 @@
-package benchmark;
+package runtime;
 
 import org.jetbrains.annotations.NotNull;
 

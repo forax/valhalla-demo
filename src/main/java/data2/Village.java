@@ -6,9 +6,9 @@ public class Village {
   private final @NonNull Population population;
 
   public Village(@NonNull Population population) {
+    this.population = population;
     super();
     System.out.println(this);
-    this.population = population;
   }
 
   @Override
