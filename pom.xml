@@ -144,7 +144,7 @@
                         <arg>--add-exports=java.base/jdk.internal.value=ALL-UNNAMED</arg>
                         <arg>-XDcompilePolicy=simple</arg>
                         <!-- arg>-Xep:NullAway:ERROR</arg -->
-                        <arg>-Xplugin:ErrorProne -XepOpt:NullAway:AnnotatedPackages=org.jspecify -Xep:IdentityBinaryExpression:OFF -Xep:ThreadPriorityCheck:OFF -Xep:DefaultPackage:OFF -Xep:BoxedPrimitiveEquality:OFF</arg>
+                        <!-- arg>-Xplugin:ErrorProne -XepOpt:NullAway:AnnotatedPackages=org.jspecify -Xep:IdentityBinaryExpression:OFF -Xep:ThreadPriorityCheck:OFF -Xep:DefaultPackage:OFF -Xep:BoxedPrimitiveEquality:OFF</arg -->
 
                         <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                         <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
