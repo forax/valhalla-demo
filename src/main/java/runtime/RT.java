@@ -12,7 +12,7 @@ public final class RT {
     throw new AssertionError();
   }
 
-  private static final MethodHandle NEW_NULL_RESTRICTED_ARRAY;
+  private static final MethodHandle NEW_NULL_RESTRICTED_ATOMIC_ARRAY;
 
   static {
     Class<?> valueClass;
@@ -23,8 +23,8 @@ public final class RT {
     }
     var lookup = lookup();
     try {
-      NEW_NULL_RESTRICTED_ARRAY = lookup.findStatic(valueClass,"newNullRestrictedArray",
-          methodType(Object[].class, Class.class, int.class));
+      NEW_NULL_RESTRICTED_ATOMIC_ARRAY = lookup.findStatic(valueClass,"newNullRestrictedAtomicArray",
+          methodType(Object[].class, Class.class, int.class, Object.class));
     } catch (NoSuchMethodException | IllegalAccessException e) {
       throw (LinkageError) new LinkageError().initCause(e);
     }
@@ -33,7 +33,7 @@ public final class RT {
   @SuppressWarnings("unchecked")
   public static <T> T[] newNullRestrictedArray(Class<T> component, int length) {
     try {
-      return (T[]) NEW_NULL_RESTRICTED_ARRAY.invokeExact(component, length);
+      return (T[]) NEW_NULL_RESTRICTED_ATOMIC_ARRAY.invokeExact(component, length, defaultValue(component));
     } catch (RuntimeException | Error e) {
       throw e;
     } catch (Throwable e) {
@@ -41,7 +41,7 @@ public final class RT {
     }
   }
 
-  private static final ClassValue<Object> CLASS_VALUE = new ClassValue<Object>() {
+  private static final ClassValue<Object> CLASS_VALUE = new ClassValue<>() {
     @Override
     protected Object computeValue(@NotNull Class<?> type) {
       return ((Object[]) java.lang.reflect.Array.newInstance(type, 1))[0];
