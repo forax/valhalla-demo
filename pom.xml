@@ -136,8 +136,8 @@
                 </executions>
                 <configuration>
                     <fork>true</fork>
-                    <!-- source>24</source -->
-                    <!-- target>24</target -->
+                    <source>27</source>
+                    <target>27</target>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
                         <arg>--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED</arg>
