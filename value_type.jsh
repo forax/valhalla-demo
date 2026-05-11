@@ -1,6 +1,5 @@
-// To starts, run jshell --enable-preview which is a program able to interpret Java syntax
-// then cut and paste the following lines to see how it works
-// To exit jshell type /exit
+// To start, execute java -jar jvisualbook-*.jar on the command line
+// jvisualbook is a notebook program that runs in the browser
 
 // # Value Class Emotions
 // Rémi Forax
@@ -100,8 +99,8 @@ synchronized (o) { }
 // 2) Same bytecode for identity/value class
 
 // 3) Java classes are loaded lazily (very late)
-//    - after the type of fields is discovered
-//    - after the type of parameters is discovered
+//    - after the types of fields are discovered
+//    - after the types of parameters are discovered
 
 // ## Strict initialization is required!
 // All fields of a value class must be initialized **before** the call to `super()`
@@ -232,7 +231,7 @@ class Car {
 // **Retrofit** `Integer`, `Optional`, `LocalDate`, etc to be value classes
 
 // # Value Class Emotions
-// Let's try to imrpove the heap flattening
+// Let's try to improve the heap flattening
 
 // ## Idea of the Value Class Emotions
 
