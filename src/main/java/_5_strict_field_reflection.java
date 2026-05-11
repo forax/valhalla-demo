@@ -1,4 +1,4 @@
-import data.Complex;
+value record Complex(double re, double im) { }
 
 void main() throws NoSuchFieldException, IllegalAccessException {
   var field = Complex.class.getDeclaredField("re");

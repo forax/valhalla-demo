@@ -1,4 +1,19 @@
-import data.Complex;
+static final value class Complex {
+  private final double re;
+  private final double im;
+
+  Complex(double re, double im) {
+    this.re = re;
+    this.im = im;
+  }
+
+  @Override
+  public String toString() {
+    return "Complex[" +
+        "re=" + re + ", " +
+        "im=" + im + ']';
+  }
+}
 
 void main() {
   var c1 = new Complex(12, 24);

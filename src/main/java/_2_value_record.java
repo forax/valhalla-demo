@@ -1,4 +1,10 @@
-import data.Range;
+value record Range(int start, int end) {
+  Range {
+    if (start > end) {
+      throw new IllegalArgumentException("start > end");
+    }
+  }
+}
 
 void main() {
   var range = new Range(0, 1);

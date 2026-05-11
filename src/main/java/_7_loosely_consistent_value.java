@@ -1,6 +1,6 @@
-import data3.Complex;
-
 import static java.util.stream.IntStream.rangeClosed;
+
+value record Complex(double re, double im) { }
 
 //@jdk.internal.vm.annotation.NullRestricted
 Complex complex = new Complex(0, 0);
