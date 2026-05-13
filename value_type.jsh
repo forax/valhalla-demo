@@ -165,9 +165,9 @@ static int iterate(double cx, double cy) {
 // ```text
 // Benchmark    | Mode | Cnt | Score     Error  Units
 // -------------|------|-----|----------------------
-// primitive    | avgt | 10  | 86,127  ± 2,460  ms/op
+// primitive    | avgt | 10  |  86,127 ± 2,460  ms/op
 // record       | avgt | 10  | 207.828 ± 1.938  ms/op
-// value record | avgt | 10  | 86,528  ± 1,689  ms/op
+// value record | avgt | 10  |  86,528 ± 1,689  ms/op
 // ```
 
 // ## GC usages
