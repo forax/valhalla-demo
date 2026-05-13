@@ -79,7 +79,7 @@ synchronized (myFloat) { }
 Object o = myFloat;
 synchronized (o) { }
 
-// ## Three problems to solve
+// ## Several problems to solve
 // This is not that hard...
 
 // 1) `this` in a constructor is modifiable
@@ -321,7 +321,7 @@ var list = new ArrayList<Complex!>();
 Person f() { return null; }
 void m() {
   Person! p = f();
-  //Person! p2 = (Person!) f();
+  //var p2 = (Person!) f();
 }
 
 m();
