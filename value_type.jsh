@@ -2,7 +2,7 @@
 // jvisualbook is a notebook program that runs in the browser
 
 // # Value Class Emotions
-// Rémi Forax
+// Remi Forax
 
 // Université Gustave Eiffel, May 2026
 
@@ -27,13 +27,15 @@ IO.println(p1 == p2);
 // The operator == compares all the field values
 
 // ## Why OpenJDK Valhalla ?
-// - No cost abstraction
+// Started in August 2014 by Brian Goetz and John Rose
+
+// - No cost abstraction ?
 // - Flat representation (CPU friendly)
 // - Primitives are a nuisance
 
 // ## Value type objects are:
-// - **unmodifiable**,
 // - **identity-free**,
+// - **unmodifiable**,
 // - stored and passed **by value** rather than by pointer
 
 // **No overhead** of heap allocation and pointer indirection
@@ -44,7 +46,7 @@ IO.println(p1 == p2);
 
 // A value class is **implicitly `final`**
 
-// All fields are **implicitly strict `final`**
+// All fields are **implicitly `final`**
 
 value class MyInteger {
   int x;
@@ -65,24 +67,10 @@ value record Person(String name) implements Comparable<Person> {
 var person = new Person("Bob the welder");
 Object object = person;   // the VM may box the value
 
-// ## toString() and hashCode() works!
-
-value class Pet {
-  String kind;
-  public Pet(String kind) { this.kind = kind; }
-}
-
-var garfield = new Pet("cat");
-var charly = new Pet("cat");
-IO.println(garfield);
-IO.println(Integer.toHexString(charly.hashCode()));
-
-// Uses the values of the fields to compute the 'default' hashCode()
-
 // ## Synchronized and other methods that need a header?
 // An **identity** class has a header
 
-// A value class has no a header
+// A value class has no header
 
 value record MyFloat(float f) {}
 var myFloat = new MyFloat(3.14f);
@@ -96,7 +84,7 @@ synchronized (o) { }
 
 // 1) `this` in a constructor is modifiable
 
-// 2) Same bytecode for identity/value class
+// 2) Same bytecode for identity class and value class
 
 // 3) Java classes are loaded lazily (very late)
 //    - after the types of fields are discovered
@@ -108,7 +96,7 @@ synchronized (o) { }
 value class MyInteger {
   int value;
   MyInteger(int value) {
-    super();               // <- oops
+    super();
     this.value = value;
   }
   int value() { return value; }
@@ -118,7 +106,7 @@ value class MyInteger {
 // To prepare the introduction of value types
 
 // Java 25 supports strict initialization,
-// avoids **leaky** `this`
+// avoiding **leaky** `this`
 
 class Person {
   String name;            // final or not
@@ -132,6 +120,9 @@ class Person {
 new Person("John")
 
 // # Mandelbrot set
+// A two-dimensional set defined in the complex plane
+
+// ![Mandelbrot image](images/mandelbrot.png)
 
 // ## Mandelbrot set
 // The set of complex numbers c for which the sequence defined by the iteration:
@@ -169,27 +160,29 @@ static int iterate(double cx, double cy) {
 }
 
 // ## Benchmarks
-// 1024 x 1024 — itérations max : 255
+// 1024 x 1024 — iterations max : 255
 
 // ```text
-// Benchmark    | Mode | Cnt | Score     Error Units
+// Benchmark    | Mode | Cnt | Score     Error  Units
 // -------------|------|-----|----------------------
-// primitive    | avgt | 10  | 19.758  ± 0.119 ms/op
-// record       | avgt | 10  | 207.828 ± 1.938 ms/op
-// value record | avgt | 10  | ??
+// primitive    | avgt | 10  | 86,127  ± 2,460  ms/op
+// record       | avgt | 10  | 207.828 ± 1.938  ms/op
+// value record | avgt | 10  | 86,528  ± 1,689  ms/op
 // ```
 
 // ## GC usages
+// Using JFR to measure allocations
 
-// ```text
-// TODO
-// ```
+// [JFR allocation using value type](images/jfr-alloc-value.png)
+
+// [JFR allocation using identity type](images/jfr-alloc-identity.png)
+
 
 // # Value class is a VM optimization
 
-// The Java compiler does almost nothing
+// The Java compiler only removes the ACC_IDENTITY bit in the class file
 
-// The JIT (c2) remove allocation/indirection when
+// The JIT (c2) removes allocation/indirection when
 // the bytecode is transformed to machine code
 
 // ## Existing JDK classes retrofitted as value classes
@@ -256,12 +249,21 @@ value record Person(String name, int age) {}
 class Car {
   Person! driver;
   Car(Person driver) {
-    this.driver = driver;   // the VM throws a NPE
+    this.driver = driver;   // the VM can throw a NPE
     super();
   }
 }
 
 //new Car(null);
+
+// ## Why not using '?' instead of '!'?
+// Like in Kotlin?
+
+String s = null;   // Invalid in Kotlin, valid in Java
+
+// Adding '?' requires to change the semantics of Java
+
+// This is **not a backward compatible** change
 
 // ## Method parameters with '!'
 // Equivalent to `Objects.requireNonNull()` on the parameter
@@ -278,7 +280,7 @@ class Car {
 new Car(null);
 
 // ## Creating an array with '!'
-// Same issue, the array elements **can not be initialized** to `null`
+// The array elements **can not be initialized** to `null`
 
 // Without initial elements
 var array = new Person![4];
@@ -300,14 +302,45 @@ array[1] = null;
 Object[] objectArray = array;
 objectArray[1] = null;
 
-// ## Why not using '?' instead of '!'?
-// Like in Kotlin?
+// ## Using collections with '!'
+// Sadly, it does not work 😢
 
-String s = null;   // Invalid in Kotlin, valid in Java 26
+// Generics are erased at compile time,
+// the type arguments are not available for the VM at runtime
 
-// This is **not a backward compatible** change
+var list = new ArrayList<Complex!>();
+//list.add(null);
 
-// ## The semantics of '!' is weird?
+// We need a parametrized VM. We are working on it!
+
+// ## Inside a method
+// You can declare a local variable with '!' or use it in a cast
+
+// In both cases, the compiler insert a check at compile time
+
+Person f() { return null; }
+void m() {
+  Person! p = f();
+  //Person! p2 = (Person!) f();
+}
+
+m();
+
+// Allowing '!' for local variables is still in discussion
+
+// ## '!' also works on identity classes
+// This exactly the same semantics as for value classes
+
+class User { String! name; User(String name) { this.name = name; super(); }}
+var user = new User(null);
+
+void m(String! s) {}
+m(null);
+
+void f(String s) { String! s2 = s; }
+f(null);
+
+// ## Method selection and '!'
 // We want to be backward compatible, so '!' can not be used in method selection
 
 class A { void m(Object o) {} }
@@ -332,7 +365,7 @@ class Maybe {
 // `flag` is flatten (sizeof <= 64 bits),
 // `value` is flatten (`final` bang)
 
-// # Summary
+// # TLDR;
 
 // ## Code like a class, Work like an int
 
@@ -361,4 +394,27 @@ record Line(Complex! c1, Complex! c2) { }
 
 // ☁️ Parametric JVM (List<ValueType>)
 
+// # Supplementary slides
 
+// ## toString() and hashCode() works!
+
+value class Pet {
+  String kind;
+  public Pet(String kind) { this.kind = kind; }
+}
+
+var garfield = new Pet("cat");
+var charly = new Pet("cat");
+IO.println(garfield);
+IO.println(Integer.toHexString(charly.hashCode()));
+
+// Uses the values of the fields to compute the 'default' hashCode()
+
+// ## Weak references do not work!
+
+// A weak reference is a reference that does not prevent the object from being garbage collected,
+// i.e. a reference not seen by the GC
+
+value record Cat(String name) { }
+var cat = new Cat("charly");
+var weakCat = new WeakReference<>(cat);
