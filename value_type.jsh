@@ -183,7 +183,7 @@ static int iterate(double cx, double cy) {
 // The Java compiler only removes the ACC_IDENTITY bit in the class file
 
 // The JIT (c2) removes allocation/indirection when
-// the bytecode is transformed to machine code
+// the bytecode is **transformed to machine code**
 
 // ## Existing JDK classes retrofitted as value classes
 // All existing classes annotated with `@ValueBased` are now value classes
