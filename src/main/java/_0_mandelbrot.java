@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -51,21 +52,31 @@ static void render(BufferedImage image) {
   }
 }
 
-void main() {
-  var frame = new JFrame("Mandelbrot Set");
-  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+void main(String[] args) throws IOException {
   var image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
   render(image);
-  var icon = new ImageIcon(image);
 
-  var panel = new JPanel();
-  var label = new JLabel(icon);
-  panel.add(label);
-  panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+  if (args.length == 1 && args[0].equals("--profile")) {
+    return;
+  }
+  if (args.length == 0) {
+    ImageIO.write(image, "png", Path.of("mandelbrot-demo.png").toFile());
+    return;
+  }
+  if (args.length == 1 && args[0].equals("--ui")) {
+    var frame = new JFrame("Mandelbrot Set");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-  frame.add(panel);
-  frame.pack();
-  frame.setLocationRelativeTo(null);
-  frame.setVisible(true);
+    var icon = new ImageIcon(image);
+
+    var panel = new JPanel();
+    var label = new JLabel(icon);
+    panel.add(label);
+    panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+
+    frame.add(panel);
+    frame.pack();
+    frame.setLocationRelativeTo(null);
+    frame.setVisible(true);
+  }
 }
