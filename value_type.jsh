@@ -29,7 +29,7 @@ IO.println(p1 == p2);
 // #
 // ![Java mascot in a north god clothing](images/duke-valhalla-white.png)
 
-// ## Why OpenJDK Valhalla ?
+// ## Why Valhalla ?
 // Started in August 2014 by Brian Goetz and John Rose
 
 // - No cost abstraction ?
