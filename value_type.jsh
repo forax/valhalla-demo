@@ -27,7 +27,7 @@ IO.println(p1 == p2);
 // The operator == compares all the field values
 
 // #
-// ![Java mascot in a north god clothing](images/duke-valhalla.png)
+// ![Java mascot in a north god clothing](images/duke-valhalla-white.png)
 
 // ## Why OpenJDK Valhalla ?
 // Started in August 2014 by Brian Goetz and John Rose
