@@ -372,18 +372,20 @@ class Maybe {
 
 // ## Code like a class, Work like an int
 
-// value type instances are scalarized on stack
+// value type instances are **scalarized** on stack
 
-var c = new Complex(0, 0);
+// Value type fields/array elements are **flattened** on heap
+// - if sizeof <= 56 bits (need 1 byte for `null`)
+// - if field is `!` and sizeof <= 64 bits
+// - if field is `!` and `final`
 
-// Value type fields are flattened on heap
-// - if sizeof <= 64 bits (1 byte for `null`)
-// - if sizeof <= 64 bits and '!'
-// - if the field is `final` and '!'
-
-record Line(Complex! c1, Complex! c2) { }
+// Maybe **`non-null`** instead of `!`
+// ```java
+// record Line(non-null Complex c1, non-null Complex c2) { }
+// ```
 
 // ## Roadmap to Valhalla
+// Subject to change
 
 // 🚚 JEP 513: Flexible Constructor Bodies
 
