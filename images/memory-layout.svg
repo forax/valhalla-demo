@@ -1,0 +1,1569 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="170mm"
+   height="120mm"
+   viewBox="0 0 170 120"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="memory-layout.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.6388603"
+     inkscape:cx="340.17543"
+     inkscape:cy="242.24151"
+     inkscape:window-width="1710"
+     inkscape:window-height="1041"
+     inkscape:window-x="0"
+     inkscape:window-y="43"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g102-5" />
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 2,1 8,5 2,9"
+         fill="none"
+         stroke="context-stroke"
+         stroke-width="1.5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path1" />
+    </marker>
+    <mask
+       id="imagine-text-gaps-4i4re6"
+       maskUnits="userSpaceOnUse">
+      <rect
+         x="0"
+         y="0"
+         width="680"
+         height="580"
+         fill="#ffffff"
+         id="rect1" />
+      <rect
+         x="58.650002"
+         y="16"
+         width="222.7"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect2" />
+      <rect
+         x="401.49167"
+         y="16"
+         width="217.01666"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect3" />
+      <rect
+         x="41"
+         y="48.5"
+         width="89.383331"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect4" />
+      <rect
+         x="41"
+         y="64.5"
+         width="125.46667"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect5" />
+      <rect
+         x="381"
+         y="48.5"
+         width="89.383331"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect6" />
+      <rect
+         x="381"
+         y="64.5"
+         width="132.68333"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect7" />
+      <rect
+         x="25"
+         y="104.5"
+         width="38.866669"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect8" />
+      <rect
+         x="95.125"
+         y="132"
+         width="79.75"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect9" />
+      <rect
+         x="55"
+         y="162.25"
+         width="43.549999"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect10" />
+      <rect
+         x="139.85001"
+         y="162.25"
+         width="65.150002"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect11" />
+      <rect
+         x="55"
+         y="197.25"
+         width="40.616665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect12" />
+      <rect
+         x="188.25"
+         y="197.25"
+         width="16.75"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect13" />
+      <rect
+         x="232.46666"
+         y="196"
+         width="51.066666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect14" />
+      <rect
+         x="45"
+         y="286"
+         width="250"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect15" />
+      <rect
+         x="55"
+         y="316.25"
+         width="88.300003"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect16" />
+      <rect
+         x="231.18333"
+         y="316.25"
+         width="55.816666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect17" />
+      <rect
+         x="55"
+         y="343.25"
+         width="41.116665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect18" />
+      <rect
+         x="211.83333"
+         y="343.25"
+         width="75.166664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect19" />
+      <rect
+         x="55"
+         y="371.25"
+         width="30.166666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect20" />
+      <rect
+         x="262.01666"
+         y="371.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect21" />
+      <rect
+         x="105.85833"
+         y="422"
+         width="128.28333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect22" />
+      <rect
+         x="73.341667"
+         y="440"
+         width="193.31667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect23" />
+      <rect
+         x="76.433334"
+         y="458"
+         width="187.13333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect24" />
+      <rect
+         x="116.89167"
+         y="476"
+         width="106.21667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect25" />
+      <rect
+         x="365"
+         y="104.5"
+         width="38.866669"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect26" />
+      <rect
+         x="416.03333"
+         y="132"
+         width="187.93333"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect27" />
+      <rect
+         x="395"
+         y="162.25"
+         width="76.416664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect28" />
+      <rect
+         x="551.83331"
+         y="162.25"
+         width="75.166664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect29" />
+      <rect
+         x="395"
+         y="199.25"
+         width="65.466667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect30" />
+      <rect
+         x="602.01666"
+         y="199.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect31" />
+      <rect
+         x="395"
+         y="229.25"
+         width="72.933334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect32" />
+      <rect
+         x="584.16669"
+         y="229.25"
+         width="42.833332"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect33" />
+      <rect
+         x="407.89999"
+         y="260"
+         width="204.2"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect34" />
+      <rect
+         x="395"
+         y="287.25"
+         width="40.616665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect35" />
+      <rect
+         x="602.01666"
+         y="287.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect36" />
+      <rect
+         x="395"
+         y="315.25"
+         width="120.81667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect37" />
+      <rect
+         x="605"
+         y="315.25"
+         width="22"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect38" />
+      <rect
+         x="441.97501"
+         y="366"
+         width="136.05"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect39" />
+      <rect
+         x="397.16666"
+         y="384"
+         width="225.66667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect40" />
+      <rect
+         x="425.93332"
+         y="402"
+         width="168.13333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect41" />
+      <rect
+         x="419.27499"
+         y="420"
+         width="181.45"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect42" />
+      <rect
+         x="121"
+         y="510"
+         width="114.1"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect43" />
+      <rect
+         x="293"
+         y="510"
+         width="142.64999"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect44" />
+    </mask>
+    <mask
+       id="mask88"
+       maskUnits="userSpaceOnUse">
+      <rect
+         x="0"
+         y="0"
+         width="680"
+         height="580"
+         fill="#ffffff"
+         id="rect45" />
+      <rect
+         x="58.650002"
+         y="16"
+         width="222.7"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect46" />
+      <rect
+         x="401.49167"
+         y="16"
+         width="217.01666"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect47" />
+      <rect
+         x="41"
+         y="48.5"
+         width="89.383331"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect48" />
+      <rect
+         x="41"
+         y="64.5"
+         width="125.46667"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect49" />
+      <rect
+         x="381"
+         y="48.5"
+         width="89.383331"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect50" />
+      <rect
+         x="381"
+         y="64.5"
+         width="132.68333"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect51" />
+      <rect
+         x="25"
+         y="104.5"
+         width="38.866669"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect52" />
+      <rect
+         x="95.125"
+         y="132"
+         width="79.75"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect53" />
+      <rect
+         x="55"
+         y="162.25"
+         width="43.549999"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect54" />
+      <rect
+         x="139.85001"
+         y="162.25"
+         width="65.150002"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect55" />
+      <rect
+         x="55"
+         y="197.25"
+         width="40.616665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect56" />
+      <rect
+         x="188.25"
+         y="197.25"
+         width="16.75"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect57" />
+      <rect
+         x="232.46666"
+         y="196"
+         width="51.066666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect58" />
+      <rect
+         x="45"
+         y="286"
+         width="250"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect59" />
+      <rect
+         x="55"
+         y="316.25"
+         width="88.300003"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect60" />
+      <rect
+         x="231.18333"
+         y="316.25"
+         width="55.816666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect61" />
+      <rect
+         x="55"
+         y="343.25"
+         width="41.116665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect62" />
+      <rect
+         x="211.83333"
+         y="343.25"
+         width="75.166664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect63" />
+      <rect
+         x="55"
+         y="371.25"
+         width="30.166666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect64" />
+      <rect
+         x="262.01666"
+         y="371.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect65" />
+      <rect
+         x="105.85833"
+         y="422"
+         width="128.28333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect66" />
+      <rect
+         x="73.341667"
+         y="440"
+         width="193.31667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect67" />
+      <rect
+         x="76.433334"
+         y="458"
+         width="187.13333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect68" />
+      <rect
+         x="116.89167"
+         y="476"
+         width="106.21667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect69" />
+      <rect
+         x="365"
+         y="104.5"
+         width="38.866669"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect70" />
+      <rect
+         x="416.03333"
+         y="132"
+         width="187.93333"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect71" />
+      <rect
+         x="395"
+         y="162.25"
+         width="76.416664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect72" />
+      <rect
+         x="551.83331"
+         y="162.25"
+         width="75.166664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect73" />
+      <rect
+         x="395"
+         y="199.25"
+         width="65.466667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect74" />
+      <rect
+         x="602.01666"
+         y="199.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect75" />
+      <rect
+         x="395"
+         y="229.25"
+         width="72.933334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect76" />
+      <rect
+         x="584.16669"
+         y="229.25"
+         width="42.833332"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect77" />
+      <rect
+         x="407.89999"
+         y="260"
+         width="204.2"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect78" />
+      <rect
+         x="395"
+         y="287.25"
+         width="40.616665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect79" />
+      <rect
+         x="602.01666"
+         y="287.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect80" />
+      <rect
+         x="395"
+         y="315.25"
+         width="120.81667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect81" />
+      <rect
+         x="605"
+         y="315.25"
+         width="22"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect82" />
+      <rect
+         x="441.97501"
+         y="366"
+         width="136.05"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect83" />
+      <rect
+         x="397.16666"
+         y="384"
+         width="225.66667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect84" />
+      <rect
+         x="425.93332"
+         y="402"
+         width="168.13333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect85" />
+      <rect
+         x="419.27499"
+         y="420"
+         width="181.45"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect86" />
+      <rect
+         x="121"
+         y="510"
+         width="114.1"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect87" />
+      <rect
+         x="293"
+         y="510"
+         width="142.64999"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect88" />
+    </mask>
+    <mask
+       id="mask132"
+       maskUnits="userSpaceOnUse">
+      <rect
+         x="0"
+         y="0"
+         width="680"
+         height="580"
+         fill="#ffffff"
+         id="rect89" />
+      <rect
+         x="58.650002"
+         y="16"
+         width="222.7"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect90" />
+      <rect
+         x="401.49167"
+         y="16"
+         width="217.01666"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect91" />
+      <rect
+         x="41"
+         y="48.5"
+         width="89.383331"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect92" />
+      <rect
+         x="41"
+         y="64.5"
+         width="125.46667"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect93" />
+      <rect
+         x="381"
+         y="48.5"
+         width="89.383331"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect94" />
+      <rect
+         x="381"
+         y="64.5"
+         width="132.68333"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect95" />
+      <rect
+         x="25"
+         y="104.5"
+         width="38.866669"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect96" />
+      <rect
+         x="95.125"
+         y="132"
+         width="79.75"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect97" />
+      <rect
+         x="55"
+         y="162.25"
+         width="43.549999"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect98" />
+      <rect
+         x="139.85001"
+         y="162.25"
+         width="65.150002"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect99" />
+      <rect
+         x="55"
+         y="197.25"
+         width="40.616665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect100" />
+      <rect
+         x="188.25"
+         y="197.25"
+         width="16.75"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect101" />
+      <rect
+         x="232.46666"
+         y="196"
+         width="51.066666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect102" />
+      <rect
+         x="45"
+         y="286"
+         width="250"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect103" />
+      <rect
+         x="55"
+         y="316.25"
+         width="88.300003"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect104" />
+      <rect
+         x="231.18333"
+         y="316.25"
+         width="55.816666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect105" />
+      <rect
+         x="55"
+         y="343.25"
+         width="41.116665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect106" />
+      <rect
+         x="211.83333"
+         y="343.25"
+         width="75.166664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect107" />
+      <rect
+         x="55"
+         y="371.25"
+         width="30.166666"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect108" />
+      <rect
+         x="262.01666"
+         y="371.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect109" />
+      <rect
+         x="105.85833"
+         y="422"
+         width="128.28333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect110" />
+      <rect
+         x="73.341667"
+         y="440"
+         width="193.31667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect111" />
+      <rect
+         x="76.433334"
+         y="458"
+         width="187.13333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect112" />
+      <rect
+         x="116.89167"
+         y="476"
+         width="106.21667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect113" />
+      <rect
+         x="365"
+         y="104.5"
+         width="38.866669"
+         height="18.5"
+         fill="#000000"
+         rx="2"
+         id="rect114" />
+      <rect
+         x="416.03333"
+         y="132"
+         width="187.93333"
+         height="22"
+         fill="#000000"
+         rx="2"
+         id="rect115" />
+      <rect
+         x="395"
+         y="162.25"
+         width="76.416664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect116" />
+      <rect
+         x="551.83331"
+         y="162.25"
+         width="75.166664"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect117" />
+      <rect
+         x="395"
+         y="199.25"
+         width="65.466667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect118" />
+      <rect
+         x="602.01666"
+         y="199.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect119" />
+      <rect
+         x="395"
+         y="229.25"
+         width="72.933334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect120" />
+      <rect
+         x="584.16669"
+         y="229.25"
+         width="42.833332"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect121" />
+      <rect
+         x="407.89999"
+         y="260"
+         width="204.2"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect122" />
+      <rect
+         x="395"
+         y="287.25"
+         width="40.616665"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect123" />
+      <rect
+         x="602.01666"
+         y="287.25"
+         width="24.983334"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect124" />
+      <rect
+         x="395"
+         y="315.25"
+         width="120.81667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect125" />
+      <rect
+         x="605"
+         y="315.25"
+         width="22"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect126" />
+      <rect
+         x="441.97501"
+         y="366"
+         width="136.05"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect127" />
+      <rect
+         x="397.16666"
+         y="384"
+         width="225.66667"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect128" />
+      <rect
+         x="425.93332"
+         y="402"
+         width="168.13333"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect129" />
+      <rect
+         x="419.27499"
+         y="420"
+         width="181.45"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect130" />
+      <rect
+         x="121"
+         y="510"
+         width="114.1"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect131" />
+      <rect
+         x="293"
+         y="510"
+         width="142.64999"
+         height="19.5"
+         fill="#000000"
+         rx="2"
+         id="rect132" />
+    </mask>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       x="92.226173"
+       y="9.5027494"
+       width="74.083336"
+       height="11.641666"
+       rx="1.5875"
+       fill="none"
+       stroke="var(--color-border-secondary)"
+       stroke-width="0.5"
+       style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:none;stroke-width:0.132292px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="rect133" />
+    <line
+       x1="226"
+       y1="175"
+       x2="280"
+       y2="260"
+       stroke="var(--color-text-secondary)"
+       stroke-width="1.2"
+       stroke-dasharray="4 3"
+       marker-end="url(#arrow)"
+       fill="none"
+       mask="url(#imagine-text-gaps-4i4re6)"
+       style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:none;stroke:#3d3d3a;stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:4px, 3px"
+       id="line55"
+       transform="matrix(0.10191883,0,0,0.18053112,14.611705,6.6542894)" />
+    <g
+       id="g101"
+       transform="matrix(0.26458333,0,0,0.26458333,-5.6697435,-26.480582)">
+      <rect
+         x="30.028276"
+         y="126.03801"
+         width="209.94345"
+         height="123.93372"
+         rx="7.9978456"
+         stroke-width="0.5"
+         style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#e6f1fb;stroke:#185fa5;stroke-width:0.556553px;stroke-linecap:butt;stroke-linejoin:miter"
+         id="rect134" />
+      <text
+         x="135"
+         y="144"
+         text-anchor="middle"
+         style="color:#000000;font-weight:500;font-size:14px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#0c447c;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+         id="text51">Car object</text>
+      <g
+         id="g95"
+         transform="translate(0,52)"
+         style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter">
+        <rect
+           x="44"
+           y="158"
+           width="182"
+           height="34"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#e6f1fb;stroke:#185fa5;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect135" />
+        <text
+           x="60"
+           y="172"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;opacity:1;fill:#185fa5;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text52">driver</text>
+        <text
+           x="206"
+           y="172"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#185fa5;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text53">0x7F3A…</text>
+      </g>
+      <g
+         id="g102">
+        <rect
+           x="44"
+           y="180"
+           width="182"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#e6f1fb;stroke:#185fa5;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect136" />
+        <text
+           x="60"
+           y="193"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;fill:#185fa5;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text54">seats</text>
+        <text
+           x="208"
+           y="193"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;fill:#185fa5;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text55">5</text>
+      </g>
+      <g
+         id="g102-5"
+         transform="translate(0.25,-29.75)">
+        <rect
+           x="44"
+           y="180"
+           width="182"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#e6f1fb;stroke:#185fa5;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect53-2" />
+        <text
+           x="60"
+           y="193"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;fill:#185fa5;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text54-0">object header</text>
+        <text
+           x="210"
+           y="193"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;fill:#185fa5;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text55-7"><tspan
+             sodipodi:role="line"
+             id="tspan104"
+             x="210"
+             y="193">96 bits</tspan></text>
+      </g>
+    </g>
+    <text
+       x="39.414993"
+       y="45.010975"
+       text-anchor="middle"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text56">pointer</text>
+    <g
+       style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="g63"
+       transform="matrix(0.26458333,0,0,0.26458333,-5.6697435,-20.130578)">
+      <rect
+         x="29.963509"
+         y="279.9635"
+         width="280.073"
+         height="94.793182"
+         rx="8.0020857"
+         stroke-width="0.5"
+         style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#faece7;stroke:#993c1d;stroke-width:0.427015px;stroke-linecap:butt;stroke-linejoin:miter"
+         id="rect137" />
+      <text
+         x="170"
+         y="302"
+         text-anchor="middle"
+         style="color:#000000;font-weight:500;font-size:14px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;opacity:1;fill:#712b13;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+         id="text57">Person object</text>
+      <!-- object header -->
+      <g
+         id="g99">
+        <rect
+           x="44"
+           y="312"
+           width="252"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#faece7;stroke:#993c1d;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect138" />
+        <text
+           x="60"
+           y="326"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;opacity:1;fill:#993c1d;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text58">object header</text>
+        <text
+           x="282"
+           y="326"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#993c1d;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text59">96 bits</text>
+      </g>
+      <!-- name field -->
+      <!-- age field -->
+      <g
+         id="g96"
+         transform="translate(0,-26)">
+        <rect
+           x="44"
+           y="368"
+           width="252"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#faece7;stroke:#993c1d;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect139" />
+        <text
+           x="60"
+           y="381"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;opacity:1;fill:#993c1d;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text62">age</text>
+        <text
+           x="282"
+           y="381"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#993c1d;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text63">42</text>
+      </g>
+    </g>
+    <text
+       x="39.309418"
+       y="95.227768"
+       text-anchor="middle"
+       fill="var(--color-text-danger)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text64">Extra heap allocation</text>
+    <text
+       x="39.309418"
+       y="99.990273"
+       text-anchor="middle"
+       fill="var(--color-text-danger)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text65">Pointer indirection on every read</text>
+    <text
+       x="39.309418"
+       y="104.75285"
+       text-anchor="middle"
+       fill="var(--color-text-danger)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text66">GC pressure — two live objects</text>
+    <text
+       x="39.309418"
+       y="109.51537"
+       text-anchor="middle"
+       fill="var(--color-text-danger)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text67">driver can be null</text>
+    <g
+       style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="g80"
+       transform="matrix(0.26458333,0,0,0.26458333,-5.6697435,-26.480582)">
+      <rect
+         x="369.98129"
+         y="125.98129"
+         width="280.03741"
+         height="188.28558"
+         rx="8.0010691"
+         stroke-width="0.5"
+         style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#e1f5ee;stroke:#0f6e56;stroke-width:0.46259px;stroke-linecap:butt;stroke-linejoin:miter"
+         id="rect140" />
+      <text
+         x="510"
+         y="148"
+         text-anchor="middle"
+         style="color:#000000;font-weight:500;font-size:14px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;opacity:1;fill:#085041;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+         id="text69">Car object (flat)</text>
+      <!-- driver.name -->
+      <!-- driver.age -->
+      <g
+         id="g93"
+         transform="translate(0,82)">
+        <rect
+           x="384"
+           y="194"
+           width="252"
+           height="30"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#e1f5ee;stroke:#0f6e56;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect141" />
+        <text
+           x="400"
+           y="209"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text72">driver.age</text>
+        <text
+           x="622"
+           y="209"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text73">42</text>
+      </g>
+      <!-- null marker -->
+      <!-- divider label -->
+      <g
+         id="g90"
+         transform="translate(0,20)">
+        <rect
+           x="384"
+           y="226"
+           width="252"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#e1f5ee;stroke:#0f6e56;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect142" />
+        <text
+           x="400"
+           y="239"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text74">null marker</text>
+        <text
+           x="622"
+           y="239"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text75">8 bits</text>
+        <line
+           x1="384"
+           y1="260"
+           x2="636"
+           y2="260"
+           stroke="var(--color-border-secondary)"
+           stroke-width="0.5"
+           stroke-dasharray="4 2"
+           mask="url(#imagine-text-gaps-4i4re6)"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#000000;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:4px, 2px"
+           id="line75" />
+      </g>
+      <!-- seats -->
+      <g
+         id="g91"
+         transform="translate(0,-98)">
+        <rect
+           x="384"
+           y="284"
+           width="252"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#e1f5ee;stroke:#0f6e56;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect143" />
+        <text
+           x="400"
+           y="297"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text77">seats</text>
+        <text
+           x="622"
+           y="297"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text78"><tspan
+             sodipodi:role="line"
+             id="tspan87"
+             x="622"
+             y="297">5</tspan></text>
+      </g>
+      <!-- padding -->
+      <g
+         id="g92"
+         transform="translate(0,-96)">
+        <rect
+           x="384"
+           y="312"
+           width="252"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;opacity:1;fill:#e1f5ee;stroke:#0f6e56;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect144" />
+        <text
+           x="400"
+           y="325"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text79">padding / alignment</text>
+        <text
+           x="622"
+           y="325"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#0f6e56;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text80">24 bits</text>
+      </g>
+      <g
+         id="g100">
+        <rect
+           x="383.25"
+           y="157.25"
+           width="252"
+           height="26"
+           rx="4"
+           stroke-width="0.5"
+           style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#e1f5ee;fill-opacity:1;stroke:#008000;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="rect57-1" />
+        <text
+           x="399.25"
+           y="171.25"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:start;fill:#106f57;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text58-0">object header</text>
+        <text
+           x="621.25"
+           y="171.25"
+           text-anchor="end"
+           dominant-baseline="central"
+           style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;fill:#0f6e56;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
+           id="text59-3">96 bits</text>
+      </g>
+    </g>
+    <text
+       x="129.26807"
+       y="94.698601"
+       text-anchor="middle"
+       fill="var(--color-text-success)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text81">No separate allocation</text>
+    <text
+       x="129.26807"
+       y="99.461105"
+       text-anchor="middle"
+       fill="var(--color-text-success)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text82">Direct field access — no pointer chase</text>
+    <text
+       x="129.26807"
+       y="104.22367"
+       text-anchor="middle"
+       fill="var(--color-text-success)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text83">GC sees one object, not two</text>
+    <text
+       x="129.26807"
+       y="108.98621"
+       text-anchor="middle"
+       fill="var(--color-text-success)"
+       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
+       id="text84">driver can be null</text>
+    <line
+       x1="340"
+       y1="44"
+       x2="340"
+       y2="540"
+       stroke="var(--color-border-tertiary)"
+       stroke-width="0.5"
+       stroke-dasharray="4 3"
+       mask="url(#imagine-text-gaps-4i4re6)"
+       style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:4px, 3px"
+       id="line84"
+       transform="matrix(-0.26458333,0,0,0.20812497,174.2468,-0.18391572)" />
+  </g>
+</svg>

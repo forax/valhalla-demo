@@ -202,7 +202,7 @@ IO.println(Boolean.class.isValue());
 // ## Storing value instances in fields/arrays?
 // Works but may not get the best performance
 
-value record Person(String name, int age) {}
+value record Person(int age/*, String name*/) {}
 class Car {
   Person driver;
   int numberOfSeats;
@@ -213,6 +213,10 @@ class Car {
 // The VM spec mandates reference read/write to be "atomic"
 
 // So only 64 bits value instances (`null` included) are flattened?
+
+// ## Flattening on Heap
+
+// ![Heap representation of a value class](images/memory-layout.svg)
 
 // ## JEP 401: Value Classes and Objects (Preview)
 
@@ -249,7 +253,7 @@ class Car {
 // ## Fields with '!' has to be initialized before super()
 // A null-restricted field can **not be set** to 'null'
 
-value record Person(String name, int age) {}
+value record Person(int age, String name) {}
 class Car {
   Person! driver;
   Car(Person driver) {
@@ -259,6 +263,10 @@ class Car {
 }
 
 //new Car(null);
+
+// ## Flattening on Heap (with '!')
+
+// ![Heap representation with bang](images/memory-layout-null-restricted.svg)
 
 // ## Why not using '?' instead of '!'?
 // Like in Kotlin?
@@ -293,6 +301,8 @@ var array = new Person![4];
 var proto = new Person[4];
 Arrays.setAll(proto, _ -> new Person("Bob", 42));
 var array = (Person[]) Array.newInstance(Person.class, 0x0200, 4, proto, 0);
+
+// `0x0200` means null restricted
 
 // ## Using an array with '!'
 // As with fields, the VM checks at runtime
