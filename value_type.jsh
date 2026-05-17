@@ -230,10 +230,11 @@ class Car {
 // Let's try to improve the heap flattening
 
 // ## Idea of the Value Class Emotions
+// Let's help flattening by adding nullability markers
 
-// Let's help flattening by adding type emotions
+// '!' or '?' sigils at the end of a type
 
-// '!' or '?' sigils at the end of a type to indicate **nullability**
+// '!' for strictness/certainty, and '?' for uncertainty
 
 // `Boolean!`, `Optional!`, `Complex?`, etc.
 
