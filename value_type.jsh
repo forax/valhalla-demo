@@ -238,7 +238,7 @@ class Car {
 
 // `Boolean!`, `Optional!`, `Complex?`, etc.
 
-// ## The emotion bang '!'
+// ## Bang '!'
 // Extends Java to add '!' at the end of a type of a field
 
 value record Person(String name, int age) {}
