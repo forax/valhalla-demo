@@ -238,7 +238,7 @@ class Car {
 
 // `Boolean!`, `Optional!`, `Complex?`, etc.
 
-// ## Bang '!'
+// ## Bang '!' as a contract
 // Extends Java to add '!' at the end of a type of a field
 
 value record Person(String name, int age) {}
@@ -289,7 +289,7 @@ new Car(null);
 // Without initial elements
 var array = new Person![4];
 
-// Use an existing array as prototype
+// **No clean syntax** for now, use a prototypical array
 var proto = new Person[4];
 Arrays.setAll(proto, _ -> new Person("Bob", 42));
 var array = (Person[]) Array.newInstance(Person.class, 0x0200, 4, proto, 0);
@@ -301,10 +301,10 @@ var proto = new Person[4];
 Arrays.setAll(proto, _ -> new Person("Bob", 42));
 var array = (Person[]) Array.newInstance(Person.class, 0x0200, 4, proto, 0);
 
-array[1] = null;
+//array[1] = null;
 
 Object[] objectArray = array;
-objectArray[1] = null;
+//objectArray[1] = null;
 
 // ## Using collections with '!'
 // Sadly, it does not work 😢
@@ -315,7 +315,7 @@ objectArray[1] = null;
 var list = new ArrayList<Complex!>();
 //list.add(null);
 
-// We need a parametrized VM. We are working on it!
+// We need a parametrized VM. We are working on it! (JEP 402)
 
 // ## Inside a method
 // You can declare a local variable with '!' or use it in a cast
