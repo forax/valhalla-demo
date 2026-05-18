@@ -3,8 +3,8 @@
 
 <svg
    width="170mm"
-   height="120mm"
-   viewBox="0 0 170 120"
+   height="86mm"
+   viewBox="0 0 170 86"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
@@ -24,14 +24,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.6388603"
-     inkscape:cx="340.17543"
-     inkscape:cy="242.24151"
+     inkscape:cx="325.5311"
+     inkscape:cy="231.25827"
      inkscape:window-width="1710"
      inkscape:window-height="1041"
      inkscape:window-x="0"
      inkscape:window-y="43"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g102-5" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs1">
     <marker
@@ -1244,7 +1244,7 @@
              sodipodi:role="line"
              id="tspan104"
              x="210"
-             y="193">96 bits</tspan></text>
+             y="193">64 bits</tspan></text>
       </g>
     </g>
     <text
@@ -1296,7 +1296,7 @@
            text-anchor="end"
            dominant-baseline="central"
            style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;opacity:1;fill:#993c1d;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-           id="text59">96 bits</text>
+           id="text59">64 bits</text>
       </g>
       <!-- name field -->
       <!-- age field -->
@@ -1327,34 +1327,6 @@
            id="text63">42</text>
       </g>
     </g>
-    <text
-       x="39.309418"
-       y="95.227768"
-       text-anchor="middle"
-       fill="var(--color-text-danger)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text64">Extra heap allocation</text>
-    <text
-       x="39.309418"
-       y="99.990273"
-       text-anchor="middle"
-       fill="var(--color-text-danger)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text65">Pointer indirection on every read</text>
-    <text
-       x="39.309418"
-       y="104.75285"
-       text-anchor="middle"
-       fill="var(--color-text-danger)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text66">GC pressure — two live objects</text>
-    <text
-       x="39.309418"
-       y="109.51537"
-       text-anchor="middle"
-       fill="var(--color-text-danger)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text67">driver can be null</text>
     <g
        style="color:#000000;font-weight:400;font-size:16px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:start;fill:#000000;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
        id="g80"
@@ -1522,37 +1494,9 @@
            text-anchor="end"
            dominant-baseline="central"
            style="color:#000000;font-weight:400;font-size:12px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:central;text-anchor:end;fill:#0f6e56;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter"
-           id="text59-3">96 bits</text>
+           id="text59-3">64 bits</text>
       </g>
     </g>
-    <text
-       x="129.26807"
-       y="94.698601"
-       text-anchor="middle"
-       fill="var(--color-text-success)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text81">No separate allocation</text>
-    <text
-       x="129.26807"
-       y="99.461105"
-       text-anchor="middle"
-       fill="var(--color-text-success)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text82">Direct field access — no pointer chase</text>
-    <text
-       x="129.26807"
-       y="104.22367"
-       text-anchor="middle"
-       fill="var(--color-text-success)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text83">GC sees one object, not two</text>
-    <text
-       x="129.26807"
-       y="108.98621"
-       text-anchor="middle"
-       fill="var(--color-text-success)"
-       style="color:#000000;font-weight:400;font-size:3.175px;font-family:'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif;dominant-baseline:auto;text-anchor:middle;fill:#3d3d3a;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter"
-       id="text84">driver can be null</text>
     <line
        x1="340"
        y1="44"

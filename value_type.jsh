@@ -163,7 +163,7 @@ static int iterate(double cx, double cy) {
 }
 
 // ## Benchmarks
-// 1024 x 1024 — iterations max : 255
+// 1024 x 1024 — iterations max : 256
 
 // ```text
 // Benchmark    | Mode | Cnt | Score     Error  Units
@@ -229,6 +229,10 @@ class Car {
 // **No** need to **recompile** the user code (not fully true)
 
 // **Retrofit** `Integer`, `Optional`, `LocalDate`, etc to be value classes
+
+// ## JEP 401 Pull Request to github.com/openjdk/jdk
+
+// ![JEP 401 Pull Request](images/jep401-pull-request.png)
 
 // # Value Class Emotions
 // Let's try to improve the heap flattening
