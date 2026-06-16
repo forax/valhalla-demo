@@ -253,14 +253,14 @@ static int iterate(double cx, double cy) {
 
 // ## Java compiler
 
-// When compiling a value class
-// The compiler  the ACC_IDENTITY modifier of the class file
+// When compiling a value class.
+// The compiler removes the ACC_IDENTITY modifier bit of the class file
 
 // When compiling a class that uses a value class
-// the compiler insert an attribute **LoadableDescriptors**
+// the compiler inserts an attribute **LoadableDescriptors**
 // that list the classes that should be loaded
 
-// The VM loads those classes early to check if they are value classes
+// The VM loads these classes early to check if they are value classes
 
 
 // ## Valhalla solution checklist
@@ -462,7 +462,7 @@ var list = new ArrayList<Complex!>();
 //list.add(null);
 
 
-// We need a parametrized VM. We are working on it! (JEP 402)
+// We need a parametrized VM. We are working on it!
 
 // ## Inside a method
 // You can declare a local variable with '!' or use it in a cast
