@@ -77,7 +77,7 @@ IO.println(p1 == p2);
 // ## Are value instances objects?
 // Yes !
 
-// It can also implement interfaces and extend an abstract class
+// It can also implement interfaces
 
 value record Person(String name) implements Comparable<Person> {
   @Override
@@ -88,6 +88,21 @@ value record Person(String name) implements Comparable<Person> {
 
 Person person = new Person("Bob the welder");
 Object object = person;   // the VM may box the value
+
+
+// ## Or extend an abstract class
+// "value" on an abstract class means "value enable"
+
+abstract /*value*/ class Point {
+  int x, y;
+  Point(int x, int y) { this.x = x; this.y = y; }
+}
+abstract value class ColoredPoint extends Point {
+  String color;
+  ColoredPoint(int x, int y, String color) { this.color = color; super(x, y); }
+}
+
+// More on the `super()` call later
 
 
 // ## And hashCode()?
