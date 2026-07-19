@@ -155,12 +155,13 @@ var weakCat = new WeakReference<>(cat);
 
 
 // ## Valhalla problems checklist
+// Problems to solve
 
-// 📋 Constructors modify the fields of `this`
+// - [ ] Constructors modify the fields of `this`
 
-// 📋 Do user code has to be recompiled?
+// - [ ] Do user code has to be recompiled?
 
-// 📋 Java classes are loaded lazily (after fields and parameters are discovered)
+// - [ ] Java classes are loaded lazily (after fields and parameters are discovered)
 
 
 // ## Strict initialization!
@@ -281,11 +282,11 @@ static int iterate(double cx, double cy) {
 // ## Valhalla solution checklist
 // Problems solved!
 
-// ✅ Constructors modify the fields of `this` **only before super()**
+// - [X] Constructors modify the fields of `this` **only before super()**
 
-// ✅ **Same bytecode** for identity class and value class?
+// - [X] **Same bytecode** for identity class and value class?
 
-// ✅ Java classes are still loaded lazily, **an attribute ask for early loading**
+// - [X] Java classes are still loaded lazily, **an attribute ask for early loading**
 
 
 // ## Existing JDK classes retrofitted as value classes
