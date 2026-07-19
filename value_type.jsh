@@ -4,7 +4,7 @@
 // # Value Class + Null Restricted Types
 // Remi Forax
 
-// IGM - Université Gustave Eiffel, June 2026
+// JCrete, July 2026
 
 // ## Warning, I'm using a un-released JDK!
 
@@ -171,7 +171,7 @@ value class MyInteger {
   int value;
   MyInteger(int value) {
     super();
-    IO.println(this.value);
+    IO.println(this.value);  // Oops
     this.value = value;
   }
 }
