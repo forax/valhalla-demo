@@ -391,7 +391,7 @@ class Car {
 // ![Heap representation with bang](images/value-null-restricted-in-memory.png)
 
 
-// ## Final and '!'
+// ## Final strict init and '!'
 // Are fully flattened!
 
 value record Complex(double re, double im) {}
