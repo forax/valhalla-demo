@@ -13,7 +13,7 @@ import org.openjdk.jmh.annotations.Warmup;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.TimeUnit;
-
+/*
 @Warmup(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Fork(value = 1, jvmArgs = { "--enable-preview" })
@@ -126,3 +126,4 @@ public class ScalarizationBench {
     }
   }
 }
+*/
