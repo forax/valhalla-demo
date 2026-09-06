@@ -23,7 +23,7 @@ IO.println(Runtime.version());
 
 
 // #
-// ![Java mascot in a north god clothing](images/duke-valhalla-small.png)
+// ![Java mascot in a norse god clothing](images/duke-valhalla-small.png)
 
 
 // ## Why Valhalla ?
