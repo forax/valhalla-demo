@@ -29,11 +29,11 @@ IO.println(Runtime.version());
 // ## Why Valhalla ?
 // Started in July 2014 by Brian Goetz and John Rose
 
-// - No cost abstraction?
+// - Zero-cost abstraction?
 // - Flat memory representation? (CPU friendly)
 // - Primitives are a nuisance
 
-// ## No cost abstraction
+// ## Zero-cost abstraction
 
 // We should not choose between abstraction and performance!
 
