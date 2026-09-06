@@ -9,7 +9,7 @@
 
 // ## Warning, I'm using a Java 28 preview
 
-// This JDK has not be released yet!
+// This JDK has not been released yet!
 
 import module java.base;
 IO.println(Runtime.version());
