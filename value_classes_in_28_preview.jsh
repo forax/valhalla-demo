@@ -336,7 +336,7 @@ static int iterate(double cx, double cy) {
 
 
 // ## Existing JDK classes retrofitted as value classes
-// All existing classes annotated with `@ValueBased` are now value classes
+// Most existing classes annotated with `@ValueBased` are now value classes
 
 // All wrappers `java.lang.Boolean`, `java.lang.Integer`, etc
 
