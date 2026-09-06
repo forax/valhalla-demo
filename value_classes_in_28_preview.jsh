@@ -7,7 +7,7 @@
 // ParisJUG, September 2026
 
 
-// ## Warning, I'm Java 28 preview
+// ## Warning, I'm using a Java 28 preview
 
 // This JDK has not be released yet!
 
