@@ -88,7 +88,7 @@ static Point translate(Point p, int dx, int dy) {
 // }
 // ```
 
-// No allocation, value components are usually in registers
+// Can eliminate allocation, value components are usually in registers
 
 
 // ## Value objects are:
