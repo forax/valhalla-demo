@@ -215,7 +215,7 @@ class Car {
 
 // The VM spec mandates reference read/write to be "atomic"
 
-// So only 64 bits value instances (`null` included) are flattened?
+// So only payload with size <= 56 bits (size <= 64 bits nullable) are flattened?
 
 
 // ## Flattening on Heap (size <= 56 bits)
@@ -364,7 +364,7 @@ IO.println(Boolean.class.isValue());
 
 // **Scalarization** is done by the JIT
 
-// **Flattening** if size <= 64 bits (`null` included)
+// **Flattening** if size <= 56 bits
 
 // **No** need to **recompile** the user code (not fully true)
 
