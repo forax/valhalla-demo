@@ -72,7 +72,7 @@ IO.println(p1 == p2);
 
 // A value class has **no identity**, no address in memory
 
-// The operator == compares all the field values
+// The operator == compares all the field values (using ==)
 
 
 // ## A value instance is passed "by value"
