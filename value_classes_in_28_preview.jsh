@@ -140,7 +140,7 @@ IO.println(Integer.toHexString(charly.hashCode()));
 
 
 // ## Value classes require Strict Initialization!
-// All fields of a value class must be initialized **before** the call to `super()`
+// A not fully initialized instance should not be observable
 
  value class MyInteger {
    int value;
@@ -151,7 +151,7 @@ IO.println(Integer.toHexString(charly.hashCode()));
    }
  }
 
-// so an uninitialized field is __not observable__!
+// All fields of a value class must be initialized **before** the call to `super()`
 
 
 // ## Strict initialization and Java 25
