@@ -1,7 +1,7 @@
 // To start, execute java -jar jvisualbook-*.jar on the command line
 // jvisualbook is a notebook program that runs in the browser
 
-// # Value Classes in Java 28 Preview ... and beyond
+// # Beyond Java 28 — design exploration
 // Remi Forax
 
 // ParisJUG, September 2026
@@ -9,7 +9,7 @@
 
 // ## Warning, I'm using a un-released JDK!
 
-// This is experimental!
+// This is either experimental or just a proposal
 
 import module java.base;
 IO.println(Runtime.version());
@@ -72,7 +72,7 @@ IO.println(Runtime.version());
 // Note: _non-atomic_ (read/write) implies _null-restricted_
 
 
-// ## Idea: Null-restricted types
+// ## Exploration: Null-restricted types
 // Let's help flattening by adding nullability markers
 
 // '!' or '?' sigils at the end of a type
@@ -193,7 +193,7 @@ b.m(null);
 // Those keywords are **implementation decisions**, not something the user should control
 
 
-// ## Let's introduce primitive class
+// ## Exploration: Primitive classes
 // `primitive` implies `value`
 
 /*primitive*/ record Complex(double re, double im) {}
@@ -253,15 +253,16 @@ record Holder(/*non-null*/ Point p) {
   }
 }
 
+# In summary
 
-// # TLDR;  Code like a class, Work like an int
-// OpenJDK project Valhalla:
-
-// value class instances are **scalarized** on stack (by the JIT)
-
-// Value class fields/array elements are **maybe flattened** on heap
-
-// To enhance flattening: recompile user code + primitive class + `non-null`?
+| Feature                    | Status                |
+| -------------------------- | --------------------- |
+| `value` class              | Java 28 Preview       |
+| strict initialization      | Java 28 Preview       |
+| `!` null-restricted syntax | Failed experiment     |
+| `primitive` class          | Future/proposal       |
+| `non-null`                 | Future/proposal       |
+| parametric JVM             | Future direction      |
 
 
 // ## Roadmap to Valhalla
