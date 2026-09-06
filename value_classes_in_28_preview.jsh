@@ -224,7 +224,7 @@ class Car {
 
 
 // ## Field flattening kind
-// The VM will support 4 kinds of field/array flat layout
+// Currently Hotspot supports 4 kinds of field/array flat layout
 
 // ```text
 //                | null_marker            | null_free       |
