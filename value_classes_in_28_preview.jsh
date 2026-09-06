@@ -31,7 +31,7 @@ IO.println(Runtime.version());
 
 // - No cost abstraction?
 // - Flat memory representation? (CPU friendly)
-// - Primitives are a nuisance (beyond JEP 401)
+// - Primitives are a nuisance
 
 // ## No cost abstraction
 
@@ -145,8 +145,8 @@ IO.println(Integer.toHexString(charly.hashCode()));
  value class MyInteger {
    int value;
    MyInteger(int value) {
-     super();
-     IO.println(this.value);  // Oops
+     super();  // Oops
+     IO.println(this.value);
      this.value = value;
    }
  }
@@ -159,7 +159,7 @@ IO.println(Integer.toHexString(charly.hashCode()));
 // Java 25 already supports strict initialization,
 // to prepare the introduction of value classes
 
-// Useful even for identity class, avoid **leaky** `this`
+// Useful even for identity class, to avoid leaking an uninitialized `this`
 
 class Person {
   String name;            // final or not
@@ -218,18 +218,20 @@ class Car {
 // So only 64 bits value instances (`null` included) are flattened?
 
 
-// ## Flattening on Heap
+// ## Flattening on Heap (size <= 56 bits)
 
 // ![Heap representation of a value class](images/value-in-memory.png)
 
 
 // ## Field flattening kind
-// The VM has 4 kinds of field/array flat layout
+// The VM will support 4 kinds of field/array flat layout
 
-// |                | null_marker            | null_free       |
-// -----------------|------------------------|------------------
-// | __atomic__     | 56 bits                | 64 bits*        |
-// | __non_atomic__ | must be strict final*  | no restriction* |
+// ```text
+//                | null_marker            | null_free       |
+// ---------------|------------------------|------------------
+// __atomic__     | 56 bits                | 64 bits*        |
+// __non_atomic__ | must be strict final*  | no restriction* |
+// ```
 
 // (*) Not yet fully implemented
 
@@ -324,11 +326,11 @@ static int iterate(double cx, double cy) {
 
 // When compiling a value class.
 // - The compiler removes the `ACC_IDENTITY` modifier bit of the class file
-// - The compiler add `ACC_STRICT_INIT` on all fields
+// - The compiler adds `ACC_STRICT_INIT` on all fields
 
 // When compiling a class that uses a value class
 // the compiler inserts an attribute **LoadableDescriptors**
-// that list the classes that should be loaded
+// that list the classes that should be pre-loaded
 
 // The VM loads these classes early to check if they are value classes
 
@@ -347,14 +349,13 @@ IO.println(Boolean.class.isValue());
 
 
 // ## JEP delivered in Java 28
+// ` `
 
 // 🚚 JEP 513: Flexible Constructor Bodies (Java 25)
 
 // 🏗️ JEP 401: Value Classes and Objects (Java 28 Preview)
 
 // 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
-
-// ... more to come ...
 
 
 // ## Value classes in Java 28 (Preview)
