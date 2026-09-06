@@ -353,7 +353,7 @@ IO.println(Boolean.class.isValue());
 
 // 🚚 JEP 513: Flexible Constructor Bodies (Java 25)
 
-// 🏗️ JEP 401: Value Classes and Objects (Java 28 Preview)
+// 🏗️ JEP 401: Value Objects (Java 28 Preview)
 
 // 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
 
