@@ -14,6 +14,8 @@
 import module java.base;
 IO.println(Runtime.version());
 
+// Try it yourself at [jdk.java.net](https://jdk.java.net)
+
 
 // ## OpenJDK Projects
 // Modernizing Java
