@@ -245,15 +245,15 @@ record Holder(/*non-null*/ Point p) {
 
 
 // ## In summary
+// ` `
 
-| Feature                    | Status                |
-| -------------------------- | --------------------- |
-| `value` class              | Java 28 Preview       |
-| strict initialization      | Java 28 Preview       |
-| `!` null-restricted syntax | Failed experiment     |
-| `primitive` class          | Future/proposal       |
-| `non-null`                 | Future/proposal       |
-| parametric JVM             | Future direction      |
+// | Feature                    | Status                |
+// | -------------------------- | --------------------- |
+// | `value` class              | Java 28 Preview       |
+// | `!` null-restricted syntax | Failed experiment     |
+// | `primitive` class          | Future/proposal       |
+// | `non-null`                 | Future/proposal       |
+// | parametric JVM             | Future direction      |
 
 
 // ## Roadmap to Valhalla
