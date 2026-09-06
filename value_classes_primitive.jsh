@@ -7,7 +7,7 @@
 // ParisJUG, September 2026
 
 
-// ## Warning, I'm using a un-released JDK!
+// ## Warning, I'm using a unreleased JDK!
 
 // This is either experimental or just a proposal
 
@@ -65,11 +65,11 @@ IO.println(Runtime.version());
 
 // ## How to improve the heap flattening?
 
-// Add informations about:
+// Add information about:
 // - _nullability_?
 // - _atomicity_?
 
-// Note: _non-atomic_ (read/write) implies _null-restricted_
+// Note: read/write _non-atomic_ implies _null-restricted_
 
 
 // ## Exploration: Null-restricted types
@@ -253,7 +253,7 @@ record Holder(/*non-null*/ Point p) {
   }
 }
 
-# In summary
+## In summary
 
 | Feature                    | Status                |
 | -------------------------- | --------------------- |
