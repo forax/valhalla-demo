@@ -41,7 +41,7 @@ class DayInMonth {
   private final int day;
   public DayInMonth(int day) {
     if (day < 1 || day > 31) {
-      throw new IllegalArgumentException("invamid day " + day);
+      throw new IllegalArgumentException("invalid day " + day);
     }
     this.day = day;
   }
@@ -116,7 +116,7 @@ synchronized (o) { }
 
 // ## Weak references do not work too!
 
-// A weak reference is a reference that does not seen by the garbage collector
+// A weak reference is a reference not followed by the garbage collector
 
 value record Cat(String name) { }
 var cat = new Cat("charly");
