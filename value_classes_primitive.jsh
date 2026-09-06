@@ -19,7 +19,7 @@ IO.println(Runtime.version());
 
 // 🚚 JEP 513: Flexible Constructor Bodies (Java 25)
 
-// 🏗️ JEP 401: Value Classes and Objects (Java 28 Preview)
+// 🏗️ JEP 401: Value Objects (Java 28 Preview)
 
 // 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
 
@@ -32,7 +32,7 @@ IO.println(Runtime.version());
 
 // **Scalarization** is done by the JIT
 
-// **Flattening** if size <= 64 bits (`null` included)
+// **Flattening** if payload size <= 56 bits
 
 // **No** need to **recompile** the user code (not fully true)
 

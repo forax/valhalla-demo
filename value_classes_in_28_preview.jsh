@@ -27,7 +27,7 @@ IO.println(Runtime.version());
 
 
 // ## Why Valhalla ?
-// Started in August 2014 by Brian Goetz and John Rose
+// Started in July 2014 by Brian Goetz and John Rose
 
 // - No cost abstraction?
 // - Flat memory representation? (CPU friendly)
@@ -218,7 +218,7 @@ class Car {
 // So only payload with size <= 56 bits (size <= 64 bits nullable) are flattened?
 
 
-// ## Flattening on Heap (size <= 56 bits)
+// ## Flattening on Heap (payload size <= 56 bits)
 
 // ![Heap representation of a value class](images/value-in-memory.png)
 
@@ -246,7 +246,7 @@ value record Product(ProductId id, String name) {}
 
 // At runtime
 
-new Product(new ProductId(5), "banana")   // pointer to a 96 bits payload
+new Product(new ProductId(5), "banana")   // pointer to a 96/128 bits payload
 
 // Not yet fully implemented
 
@@ -364,7 +364,7 @@ IO.println(Boolean.class.isValue());
 
 // **Scalarization** is done by the JIT
 
-// **Flattening** if size <= 56 bits
+// **Flattening** if payload size <= 56 bits
 
 // **No** need to **recompile** the user code (not fully true)
 
