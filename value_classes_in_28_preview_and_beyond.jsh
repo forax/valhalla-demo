@@ -1,10 +1,10 @@
 // To start, execute java -jar jvisualbook-*.jar on the command line
 // jvisualbook is a notebook program that runs in the browser
 
-// # Value Class + Null Restricted Types
+// # Value Classes in Java 28 Preview ... and beyond
 // Remi Forax
 
-// JCrete, July 2026
+// ParisJUG, September 2026
 
 // ## Warning, I'm using a un-released JDK!
 
@@ -30,7 +30,23 @@ IO.println(Runtime.version());
 
 // - No cost abstraction?
 // - Flat memory representation? (CPU friendly)
-// - Primitives are a nuisance
+// - Primitives are a nuisance (beyond JEP 401)
+
+// ## No cost abstraction
+
+// We should not choose between abstraction and performance!
+
+class DayInMonth {
+  private final int day;
+  public DayInMonth(int day) {
+    if (day < 1 || day > 31) {
+      throw new IllegalArgumentException("invamid day " + day);
+    }
+    this.day = day;
+  }
+}
+
+// same for `BankId`, `Complex` or even immutable builders
 
 
 // ## Flat memory representation?
@@ -38,19 +54,13 @@ IO.println(Runtime.version());
 
 // ![Heap representation of an array](images/data-in-memory.png)
 
-// ## Roadmap to Valhalla
-// Subject to change
 
-// 🚚 JEP 513: Flexible Constructor Bodies (Java 25)
+// ## JEP 401 Pull Request to github.com/openjdk/jdk
 
-// 🏗️ JEP 401: Value Classes and Objects (Java 28 Preview)
-
-// 🚧 JEP Draft: Null-Restricted Value Class Types (Java 3X Preview)
-
-// ...
+// ![JEP 401 Pull Request](images/jep401-pull-request.png)
 
 
-// ## What is a value class?
+// ## JEP 401: What is a value class?
 // Instances/references/objects are values not pointers
 
 /*value*/ record Point(int x, int y) {}
@@ -64,14 +74,102 @@ IO.println(p1 == p2);
 // The operator == compares all the field values
 
 
-// ## Value type objects are:
-// - **identity-free**,
-// - **unmodifiable** (all fields are final),
+// ## A value instance is passed "by value"
+
+static Point translate(Point p, int dx, int dy) {
+  return new Point(p.x() + dx, p.y() + dy);
+}
+
+// At runtime, in pseudo Java
+// ```java
+// static (int, int) translate((int x, int y), int dx, int dy) {
+//   return (x + dx, y + dy);
+// }
+// ```
+
+// No allocation, value components are usually in registers
+
+
+// ## Value objects are:
+// - **identity-free** (no address, no header),
+// - **unmodifiable** (all fields are final, class is final),
 // - stored and passed **by value** rather than by pointer
 
 // Goals:
-// **No overhead** of heap allocation,
-// **no pointer indirection** for small data structures
+// **no pointer indirection** for small data structures,
+// **No overhead** for heap allocation
+
+
+// ## Synchronized vs value class?
+// An **identity** class has a header, a **value** class has no header
+
+// A value class has no header
+
+value record MyFloat(float f) {}
+MyFloat myFloat = new MyFloat(3.14f);
+synchronized (myFloat) { }
+
+Object o = myFloat;
+synchronized (o) { }
+
+
+// ## Weak references do not work too!
+
+// A weak reference is a reference that does not seen by the garbage collector
+
+value record Cat(String name) { }
+var cat = new Cat("charly");
+var weakCat = new WeakReference<>(cat);
+
+
+// ## And hashCode()?
+// An **identity** class has a header, a **value** class has no header
+
+/*value*/ class Pet {
+  /*final*/ String kind;
+  Pet(String kind) { this.kind = kind; }
+}
+
+var garfield = new Pet("cat");
+var charly = new Pet("cat");
+IO.println(Integer.toHexString(garfield.hashCode()));
+IO.println(Integer.toHexString(charly.hashCode()));
+
+// Uses the values of the fields to compute the 'default' hashCode()
+
+
+// ## Value classes require Strict Initialization!
+// All fields of a value class must be initialized **before** the call to `super()`
+
+ value class MyInteger {
+   int value;
+   MyInteger(int value) {
+     super();
+     IO.println(this.value);  // Oops
+     this.value = value;
+   }
+ }
+
+// so an uninitialized field is __not observable__!
+
+
+// ## Strict initialization and Java 25
+
+// Java 25 already supports strict initialization,
+// to prepare the introduction of value classes
+
+// Useful even for identity class, avoid **leaky** `this`
+
+class Person {
+  String name;            // final or not
+  Person(String name) {
+    Objects.requireNonNull(name);
+    this.name = name;
+    super();
+  }
+  public String toString() { return name; }
+}
+new Person("John")
 
 
 // ## Are value instances objects?
@@ -95,105 +193,59 @@ Object object = person;   // the VM may box the value
 
 abstract /*value*/ class Point {
   int x, y;
-  Point(int x, int y) { this.x = x; this.y = y; }
+  Point(int x, int y) { this.x = x; this.y = y; super(); }
 }
 abstract value class ColoredPoint extends Point {
   String color;
   ColoredPoint(int x, int y, String color) { this.color = color; super(x, y); }
 }
 
-// More on the `super()` call later
 
+// ## Storing value instances in fields/arrays?
+// Works but may not get the best performance
 
-// ## And hashCode()?
-// An **identity** class has a header, a **value** class has no header
-
-/*value*/ class Pet {
-  /*final*/ String kind;
-  Pet(String kind) { this.kind = kind; }
+value record Person(int age/*, String name*/) {}
+class Car {
+  Person driver;
+  int numberOfSeats;
 }
 
-var garfield = new Pet("cat");
-var charly = new Pet("cat");
-IO.println(Integer.toHexString(garfield.hashCode()));
-IO.println(Integer.toHexString(charly.hashCode()));
+// Reading/Storing the value instance `driver` in RAM may require **several read/writes**
 
-// Uses the values of the fields to compute the 'default' hashCode()
+// The VM spec mandates reference read/write to be "atomic"
 
-
-// ## And Synchronized?
-// An **identity** class has a header, a **value** class has no header
-
-// A value class has no header
-
-value record MyFloat(float f) {}
-MyFloat myFloat = new MyFloat(3.14f);
-synchronized (myFloat) { }
-
-Object o = myFloat;
-synchronized (o) { }
+// So only 64 bits value instances (`null` included) are flattened?
 
 
-// ## Weak references do not work too!
+// ## Flattening on Heap
 
-// A weak reference is a reference that does not seen by the garbage collector
-
-value record Cat(String name) { }
-var cat = new Cat("charly");
-var weakCat = new WeakReference<>(cat);
+// ![Heap representation of a value class](images/value-in-memory.png)
 
 
-// ## Primitives vs Objects
+// ## Field flattening kind
+// The VM has 4 kinds of field/array flat layout
 
-// Two different effects
-// - operations on stack (extra allocation, extra instructions)
-// - memory layout on heap (extra indirection + header overhead)
+// |                | null_marker            | null_free       |
+// -----------------|------------------------|------------------
+// | __atomic__     | 56 bits                | 64 bits*        |
+// | __non_atomic__ | must be strict final*  | no restriction* |
 
-// Can be solved separately !
-// - VM optimization/deoptimization (scalarization on stack)
-// - Object layout (flattening on heap)
+// (*) Not yet fully implemented
 
-
-// ## Valhalla problems checklist
-// Problems to solve
-
-// - [ ] Constructors modify the fields of `this`
-
-// - [ ] Do user code has to be recompiled?
-
-// - [ ] Java classes are loaded lazily (after fields and parameters are discovered)
+// [https://github.com/openjdk/jdk/blob/master/src/hotspot/share/oops/layoutKind.hpp#L32]
 
 
-// ## Strict initialization!
-// All fields of a value class must be initialized **before** the call to `super()`
+// ## Strict final field
+// A value instance inside a value class is flattened
 
-value class MyInteger {
-  int value;
-  MyInteger(int value) {
-    super();
-    IO.println(this.value);  // Oops
-    this.value = value;
-  }
-}
+value record ProductId(long id) {}
+value record Product(ProductId id, String name) {}
 
+// At runtime
 
-// ## Strict initialization and Java 25
+new Product(new ProductId(5), "banana")   // pointer to a 96 bits payload
 
-// Java 25 already supports strict initialization,
-// To prepare the introduction of value types
-
-// Useful even for identity class, avoid **leaky** `this`
-
-class Person {
-  String name;            // final or not
-  Person(String name) {
-    Objects.requireNonNull(name);
-    this.name = name;
-    super();
-  }
-  public String toString() { return name; }
-}
-new Person("John")
+// Not yet fully implemented
 
 
 // ## Mandelbrot set
@@ -267,26 +319,17 @@ static int iterate(double cx, double cy) {
 // the bytecode is **transformed to machine code**
 
 
-// ## Java compiler
+// ## Java compiler and VM (JEP 539)
 
 // When compiling a value class.
-// The compiler removes the ACC_IDENTITY modifier bit of the class file
+// - The compiler removes the `ACC_IDENTITY` modifier bit of the class file
+// - The compiler add `ACC_STRICT_INIT` on all fields
 
 // When compiling a class that uses a value class
 // the compiler inserts an attribute **LoadableDescriptors**
 // that list the classes that should be loaded
 
 // The VM loads these classes early to check if they are value classes
-
-
-// ## Valhalla solution checklist
-// Problems solved!
-
-// - [X] Constructors modify the fields of `this` **only before super()**
-
-// - [X] **Same bytecode** for identity class and value class?
-
-// - [X] Java classes are still loaded lazily, **an attribute ask for early loading**
 
 
 // ## Existing JDK classes retrofitted as value classes
@@ -301,28 +344,19 @@ static int iterate(double cx, double cy) {
 IO.println(Boolean.class.isValue());
 
 
-// ## Storing value instances in fields/arrays?
-// Works but may not get the best performance
 
-value record Person(int age/*, String name*/) {}
-class Car {
-  Person driver;
-  int numberOfSeats;
-}
+// ## JEP delivered in Java 28
 
-// Reading/Storing the value instance `driver` in RAM may require **several read/writes**
+// 🚚 JEP 513: Flexible Constructor Bodies (Java 25)
 
-// The VM spec mandates reference read/write to be "atomic"
+// 🏗️ JEP 401: Value Classes and Objects (Java 28 Preview)
 
-// So only 64 bits value instances (`null` included) are flattened?
+// 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
+
+// ... more to come ...
 
 
-// ## Flattening on Heap
-
-// ![Heap representation of a value class](images/value-in-memory.png)
-
-
-// ## JEP 401: Value Classes and Objects (Preview)
+// ## Value classes in Java 28 (Preview)
 
 // Mantra: Code like a class, Work like an int
 
@@ -335,12 +369,15 @@ class Car {
 // **Retrofit** `Integer`, `Optional`, `LocalDate`, etc to be value classes
 
 
-// ## JEP 401 Pull Request to github.com/openjdk/jdk
+// # ... and beyond?
 
-// ![JEP 401 Pull Request](images/jep401-pull-request.png)
+// ... We are still in the backboard stage
 
 
-// # How to improve the heap flattening?
+// ## Challenges
+
+// - How to improve the heap flattening?
+// - How to create user defined primitives?
 
 
 // ## How to improve the heap flattening?
@@ -349,7 +386,7 @@ class Car {
 // - _nullability_?
 // - _atomicity_?
 
-// Note: _non-atomic_ implies _null-restricted_
+// Note: _non-atomic_ (read/write) implies _null-restricted_
 
 
 // ## Idea: Null-restricted types
@@ -391,22 +428,6 @@ class Car {
 // ![Heap representation with bang](images/value-null-restricted-in-memory.png)
 
 
-// ## Final strict init and '!'
-// Are fully flattened!
-
-value record Complex(double re, double im) {}
-class Maybe {
-  final Boolean! flag;
-  final Complex! value;
-  Maybe(Boolean flag, Complex value) {
-    this.flag = flag;
-    this.value = value;
-    super();
-  }
-}
-
-// No concurrency issues (write once first, read many)
-
 // ## Why not using '?' instead of '!'?
 // Like in Kotlin?
 
@@ -417,13 +438,11 @@ String s = null;   // Invalid in Kotlin, valid in Java
 // This is **not a backward compatible** change
 
 
-// ## Method parameters with '!'
-// Equivalent to `Objects.requireNonNull()` on the parameter
+// ## Using '!' on parameters and with identity objects
 
-value record Person(String name, int age) {}
 class Car {
-  // Person! driver;
-  Car(Person! driver) {
+  // String! driver;
+  Car(String! driver) {
     // this.driver = driver;
     super();
   }
@@ -431,15 +450,8 @@ class Car {
 
 new Car(null);
 
+// Equivalent to `Objects.requireNonNull()` on the parameter
 
-// ## '!' also works on identity classes
-// This exactly the same semantics as for value classes
-
-class User { String! name; User(String name) { this.name = name; super(); }}
-var user = new User(null);
-
-void m(String! s) {}
-m(null);
 
 // ## Creating an array with '!'
 // The array elements **can not be initialized** to `null`
@@ -447,17 +459,16 @@ m(null);
 // Without initial elements
 var array = new Person![4];
 
-// **Prototype API**, not final syntax
-var proto = new Person[4];
-Arrays.setAll(proto, _ -> new Person("Bob", 42));
-var array = (Person[]) Array.newInstance(Person.class, 0x0200, 4, proto, 0);
+// Special syntax?
+// ```java
+// new Complex![] (index -> new Complex(index, index))
+// ```
 
+
+// ## Using a **Prototype API**
 // `0x0200` means null-restricted
 
-
-// ## Using an array with '!'
-// As with fields, the VM checks at runtime
-
+record Person(String name, int age) {}
 var proto = new Person[4];
 Arrays.setAll(proto, _ -> new Person("Bob", 42));
 var array = (Person[]) Array.newInstance(Person.class, 0x0200, 4, proto, 0);
@@ -480,21 +491,6 @@ var list = new ArrayList<Complex!>();
 
 // We need a parametrized VM. We are working on it!
 
-// ## Inside a method
-// You can declare a local variable with '!' or use it in a cast
-
-// In both cases, the compiler insert a check at compile time
-
-Person f() { return null; }
-void m() {
-  Person! p = f();
-  //var p2 = (Person!) f();
-}
-
-m();
-
-// Allowing '!' for local variables is still in discussion
-
 
 // ## Method selection and '!'
 // We want to be backward compatible, so '!' can not be used in method selection
@@ -513,7 +509,61 @@ b.m(null);
 
 // Those keywords are implementation decisions, not something the user should control
 
-// So no `ArrayList<Person!>` and more a `FlattenList<Person>`
+
+// ## Let's try with primitive class
+// `primitive` implies `value`
+
+/*primitive*/ record Complex(double re, double im) {}
+
+class Holder {
+  Complex complex;  // strict non-null
+  Holder() { }      // complex is initialized with Complex(0, 0)
+}
+
+// - Flattening like primitives on heap (null not allowed)
+// - Non-atomic like primitives
+// - Have a default value like primitives (all fields at zero)
+
+
+// ## Not symmetric on stack and on heap?
+// Allow `null` on stack for backward compatibility!
+
+class Holder {
+  Complex c;   // strict non-null
+  Holder(Complex c) {
+    Objects.requireNonNull(c);  // good practice
+    this.c = c;
+  }
+  void f(Complex c) {  // nullable
+    // Complex c2 = Complex.default;  // can ask the default value
+  }
+}
+
+// Like fields are initialized to the default value but not locals
+
+
+// ## And add a keyword `non-null` for value types
+
+value record Point(int x, int y) {}
+class Holder {
+  /*non-null*/ Point p;  // null-check at runtime
+  Holder(Point p) {
+    Objects.requireNonNull(p);   // good practice
+    this.p = p;  // must be strictly initialized
+    super();
+  }
+}
+
+
+// ## Also allow `non-null` on record components?
+
+value record Point(int x, int y) {}
+record Holder(/*non-null*/ Point p) {
+  public Holder {
+    Objects.requireNonNull(p);   // good practice
+  }
+}
+
 
 // # TLDR;  Code like a class, Work like an int
 // OpenJDK project Valhalla:
@@ -522,7 +572,7 @@ b.m(null);
 
 // Value type fields/array elements are **maybe flattened** on heap
 
-// To enhance flattening: recompile user code + add keywords or markers on types?
+// To enhance flattening: recompile user code + primitive class + keywords?
 
 
 // ## Roadmap to Valhalla
@@ -530,12 +580,14 @@ b.m(null);
 
 // 🚚 JEP 513: Flexible Constructor Bodies
 
-// 🏗️ JEP 401: Value Classes and Objects (Preview)
+// 🏗️ JEP 401: Value Classes and Objects (Java 28Preview)
 
-// 🚧 JEP Draft: Null-Restricted Value Class Types (Preview)
+// 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
+
+// 🚧 JEP Draft: Primitive Class (Preview)
 
 // ☁️ JEP 402: Enhanced Primitive Boxing (int ≈ Integer!)
 
-// 🚧 Type Classes (operator overloading)
+// 🚧 Type Classes (operator overloading for primitive class)
 
 // ☁️ Parametric JVM (List<ValueType>)
