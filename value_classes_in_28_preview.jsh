@@ -114,7 +114,7 @@ Object o = myFloat;
 synchronized (o) { }
 
 
-// ## Weak references do not work too!
+// ## Weak references do not work either!
 
 // A weak reference is a reference not followed by the garbage collector
 
