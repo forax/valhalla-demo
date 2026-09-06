@@ -90,7 +90,7 @@ static Point translate(Point p, int dx, int dy) {
 // }
 // ```
 
-// Can eliminate allocation, value components are usually in registers
+// Can eliminate allocation, value components are usually in registers (scalarization)
 
 
 // ## Value objects are:
@@ -251,6 +251,24 @@ value record Product(ProductId id, String name) {}
 new Product(new ProductId(5), "banana")   // pointer to a 96/128 bits payload
 
 // Not yet fully implemented
+
+
+// ## How to not get scalarization/flattening ?
+
+// No Scalarization
+
+sealed interface Vehicle permits Bus {}
+value record Bus(int passengers) {}
+void m(Vehicle vehicle) { /* boxed */ }
+
+// No Flattening
+
+class Car {
+  Object driver;  // boxed
+  Car(Person driver) {
+    this.driver = driver;
+  }
+}
 
 
 // ## Mandelbrot set
