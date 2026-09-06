@@ -15,17 +15,6 @@ import module java.base;
 IO.println(Runtime.version());
 
 
-// ## JEP delivered in Java 28
-
-// 🚚 JEP 513: Flexible Constructor Bodies (Java 25)
-
-// 🏗️ JEP 401: Value Objects (Java 28 Preview)
-
-// 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
-
-// ... more to come ...
-
-
 // ## Value classes in Java 28 (Preview)
 
 // Mantra: Code like a class, Work like an int
@@ -40,8 +29,9 @@ IO.println(Runtime.version());
 
 
 // # ... and beyond?
+// ` `
 
-// ... We are still in the backboard stage
+// ... We are still in exploratory mode
 
 
 // ## Challenges
@@ -253,7 +243,8 @@ record Holder(/*non-null*/ Point p) {
   }
 }
 
-## In summary
+
+// ## In summary
 
 | Feature                    | Status                |
 | -------------------------- | --------------------- |
