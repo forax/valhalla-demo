@@ -21,7 +21,6 @@ void main() {
   IO.println(c1);
 
   IO.println("isValue " + c1.getClass().isValue());
-  IO.println("isIdentity " + c1.getClass().isIdentity());
 
   IO.println(c1 == c2);
 
