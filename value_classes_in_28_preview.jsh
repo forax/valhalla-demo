@@ -253,7 +253,7 @@ new Product(new ProductId(5), "banana")   // pointer to a 96/128 bits payload
 // Not yet fully implemented
 
 
-// ## How to not get scalarization/flattening ?
+// ## How to NOT get scalarization/flattening ?
 
 // No Scalarization
 
