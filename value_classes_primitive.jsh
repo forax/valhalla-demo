@@ -7,9 +7,9 @@
 // ParisJUG, September 2026
 
 
-// ## Warning, I'm using a unreleased JDK!
+// ## Warning, I'm using my own build
 
-// This is either experimental or just a proposal
+// This is experimental
 
 import module java.base;
 IO.println(Runtime.version());
@@ -75,20 +75,20 @@ IO.println(Runtime.version());
 // ## Bang '!' as a contract
 // Extends Java to add '!' at the end of a type of a field
 
-value record Person(String name, int age) {}
+value record Euro(long amount) {}
 class Car {
-  Person! driver;
+  Euro! price;
 }
 
 
-// ## Fields with '!' has to be initialized before super()
+// ## Fields with '!' have to be initialized before super()
 // A null-restricted field can **not be set** to 'null'
 
-value record Person(String name, int age) {}
+value record Euro(long amount) {}
 class Car {
-  Person! driver;
-  Car(Person driver) {
-    this.driver = driver;   // the VM can throw a NPE
+  Euro! price;
+  Car(Euro price) {
+    this.price = price;   // the VM can throw a NPE
     super();
   }
 }
@@ -139,12 +139,13 @@ var array = new Person![4];
 
 
 // ## Using a **Prototype API**
-// `0x0200` means null-restricted
 
-record Person(String name, int age) {}
+static final int NULL_RESTRICTED = 0x0200;
+
+record Person(String name) {}
 var proto = new Person[4];
-Arrays.setAll(proto, _ -> new Person("Bob", 42));
-var array = (Person[]) Array.newInstance(Person.class, 0x0200, 4, proto, 0);
+Arrays.setAll(proto, _ -> new Person("Bob"));
+var array = (Person[]) Array.newInstance(Person.class, NULL_RESTRICTED, 4, proto, 0);
 
 //array[1] = null;
 
@@ -248,13 +249,15 @@ record Holder(/*non-null*/ Point p) {
 // ## In summary
 // ` `
 
+// ```text
 // | Feature                    | Status                |
 // | -------------------------- | --------------------- |
 // | `value` class              | Java 28 Preview       |
 // | `!` null-restricted syntax | Failed experiment     |
-// | `primitive` class          | Future/proposal       |
-// | `non-null`                 | Future/proposal       |
+// | `primitive` class          | Future proposal       |
+// | `non-null`                 | Future proposal       |
 // | parametric JVM             | Future direction      |
+// ```
 
 
 // ## Roadmap to Valhalla
@@ -262,7 +265,7 @@ record Holder(/*non-null*/ Point p) {
 
 // 🚚 JEP 513: Flexible Constructor Bodies
 
-// 🏗️ JEP 401: Value Objects (Java 28Preview)
+// 🏗️ JEP 401: Value Objects (Java 28 Preview)
 
 // 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
 
