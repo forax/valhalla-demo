@@ -1,7 +1,7 @@
 // To start, execute java -jar jvisualbook-*.jar on the command line
 // jvisualbook is a notebook program that runs in the browser
 
-// # Beyond Java 28 — design exploration
+// # Beyond Java 28 — Design exploration
 // Remi Forax
 
 // ParisJUG, September 2026
@@ -84,7 +84,7 @@ class Car {
 // ## Fields with '!' has to be initialized before super()
 // A null-restricted field can **not be set** to 'null'
 
-value record Person(int age, String name) {}
+value record Person(String name, int age) {}
 class Car {
   Person! driver;
   Car(Person driver) {
@@ -235,6 +235,7 @@ class Holder {
 
 
 // ## May allow `non-null` on record components?
+// Will be transferred to fields
 
 value record Point(int x, int y) {}
 record Holder(/*non-null*/ Point p) {

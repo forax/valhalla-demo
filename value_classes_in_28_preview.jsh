@@ -21,7 +21,7 @@ IO.println(Runtime.version());
 // Modernizing Java
 
 // - Language Improvements (Amber, Babylon)
-// - Platform Improvements (Panama, Loom, Liliput, **Valhalla**, Leyden)
+// - Platform Improvements (Panama, Loom, Lilliput, **Valhalla**, Leyden)
 
 
 // #
