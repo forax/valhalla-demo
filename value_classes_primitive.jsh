@@ -130,7 +130,7 @@ new Car(null);
 // The array elements **can not be initialized** to `null`
 
 // Without initial elements
-var array = new Person![4];
+var array = new Euro![4];
 
 // Special syntax?
 // ```java
@@ -142,10 +142,9 @@ var array = new Person![4];
 
 static final int NULL_RESTRICTED = 0x0200;
 
-record Person(String name) {}
-var proto = new Person[4];
-Arrays.setAll(proto, _ -> new Person("Bob"));
-var array = (Person[]) Array.newInstance(Person.class, NULL_RESTRICTED, 4, proto, 0);
+var proto = new Euro[4];
+Arrays.setAll(proto, _ -> new Euro(200));
+var array = (Euro[]) Array.newInstance(Euro.class, NULL_RESTRICTED, 4, proto, 0);
 
 //array[1] = null;
 
@@ -159,7 +158,7 @@ Object[] objectArray = array;
 // Generics are erased at compile time,
 // the type arguments are not available for the VM at runtime
 
-var list = new ArrayList<Complex!>();
+var list = new ArrayList<Euro!>();
 //list.add(null);
 
 
@@ -170,7 +169,7 @@ var list = new ArrayList<Complex!>();
 // We want to be backward compatible, so '!' can not be used in method selection
 
 class A { void m(Object o) {} }
-class B extends A { void m(Complex! c) {} }
+class B extends A { void m(Euro! c) {} }
 
 B b = new B();
 b.m(null);
