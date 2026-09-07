@@ -250,7 +250,7 @@ record Holder(/*non-null*/ Point p) {
 
 // ```text
 // | Feature                    | Status                |
-// | -------------------------- | --------------------- |
+// |----------------------------|-----------------------|
 // | `value` class              | Java 28 Preview       |
 // | `!` null-restricted syntax | Failed experiment     |
 // | `primitive` class          | Future proposal       |
