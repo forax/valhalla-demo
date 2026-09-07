@@ -362,8 +362,8 @@ static int iterate(double cx, double cy) {
 
 // All wrappers `java.lang.Boolean`, `java.lang.Integer`, etc
 
-Integer a = 1024;
-Integer b = 1024;
+var a = (Integer) 1024;
+var b = (Integer) 1024;
 IO.println(a == b);
 IO.println(Integer.class.isValue());
 
