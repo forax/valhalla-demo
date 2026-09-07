@@ -41,16 +41,16 @@ IO.println(Runtime.version());
 
 
 // ## Field flattening kind
-// The VM has 4 kinds of field/array flat layout
+// Currently Hotspot supports 4 kinds of field/array flat layout
 
-// |                | null_marker            | null_free       |
-// -----------------|------------------------|------------------
-// | __atomic__     | 56 bits                | 64 bits*        |
-// | __non_atomic__ | must be strict final*  | no restriction* |
+// ```text
+// |            | null_marker            | null_free        |
+// -------------|------------------------|-------------------
+// | atomic     | 56 bits                | 64 bits*         |
+// | non_atomic | must be strict final*  | no restriction*  |
+// ```
 
 // (*) Not yet fully implemented
-
-// [https://github.com/openjdk/jdk/blob/master/src/hotspot/share/oops/layoutKind.hpp#L32]
 
 
 // ## How to improve the heap flattening?

@@ -229,10 +229,10 @@ class Car {
 // Currently Hotspot supports 4 kinds of field/array flat layout
 
 // ```text
-//                | null_marker            | null_free       |
-// ---------------|------------------------|------------------
-// __atomic__     | 56 bits                | 64 bits*        |
-// __non_atomic__ | must be strict final*  | no restriction* |
+// |            | null_marker            | null_free        |
+// -------------|------------------------|-------------------
+// | atomic     | 56 bits                | 64 bits*         |
+// | non_atomic | must be strict final*  | no restriction*  |
 // ```
 
 // (*) Not yet fully implemented
