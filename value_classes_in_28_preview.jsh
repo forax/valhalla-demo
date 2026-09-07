@@ -14,7 +14,7 @@
 import module java.base;
 IO.println(Runtime.version());
 
-// Try it yourself at [jdk.java.net](https://jdk.java.net)
+// Try it yourself at [jdk.java.net/28](https://jdk.java.net/28/)
 
 
 // ## OpenJDK Projects
