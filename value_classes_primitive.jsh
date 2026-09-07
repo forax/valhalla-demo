@@ -268,7 +268,7 @@ record Holder(/*non-null*/ Point p) {
 
 // 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
 
-// 🚧 JEP Draft: Primitive Class (Preview)
+// 🚧 JEP Draft: Primitive Class?
 
 // ☁️ JEP 402: Enhanced Primitive Boxing (int ≈ Integer!)
 
