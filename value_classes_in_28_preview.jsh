@@ -1,13 +1,13 @@
 // To start, execute java -jar jvisualbook-*.jar on the command line
 // jvisualbook is a notebook program that runs in the browser
 
-// # Value Classes in Java 28 Preview ... and beyond
+// # Value Classes in Java 28 Preview
 // Remi Forax
 
 // ParisJUG, September 2026
 
 
-// ## Warning, I'm using a Java 28 preview
+// ## Warning, I'm using a Java 28 preview build
 
 // This JDK has not been released yet!
 
@@ -370,7 +370,7 @@ IO.println(Integer.class.isValue());
 // This may break some existing code, `@ValueBased` contract was not enforced before
 
 
-// ## JEP delivered in Java 28
+// ## JEP available in Java 28
 // ` `
 
 // 🚚 JEP 513: Flexible Constructor Bodies (Java 25)
