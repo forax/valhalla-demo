@@ -217,7 +217,7 @@ class Car {
 
 // The VM spec mandates reference read/write to be "atomic"
 
-// So only payload with size <= 56 bits (size <= 64 bits nullable) are flattened?
+// So only payload with size <= 56 bits (size <= 64 bits nullable) are flattened
 
 
 // ## Flattening on Heap (payload size <= 56 bits)
@@ -358,14 +358,16 @@ static int iterate(double cx, double cy) {
 // ## Existing JDK classes retrofitted as value classes
 // Most existing classes annotated with `@ValueBased` are now value classes
 
+// Classes like `java.util.Optional` and most classes of `java.time`
+
 // All wrappers `java.lang.Boolean`, `java.lang.Integer`, etc
 
-// `java.util.Optional`
+Integer a = 1024;
+Integer b = 1024;
+IO.println(a == b);
+IO.println(Integer.class.isValue());
 
-// Most classes of `java.time`
-
-IO.println(Boolean.class.isValue());
-
+// This may break some existing code, `@ValueBased` contract was not enforced before
 
 
 // ## JEP delivered in Java 28
