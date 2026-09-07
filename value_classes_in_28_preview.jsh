@@ -384,7 +384,7 @@ IO.println(Integer.class.isValue());
 
 // Mantra: Code like a class, Work like an int
 
-// **Scalarization** is done by the JIT
+// **Scalarization** done by the JIT
 
 // **Flattening** if payload size <= 56 bits
 
