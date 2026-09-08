@@ -90,7 +90,7 @@ static Point translate(Point p, int dx, int dy) {
 // }
 // ```
 
-// Can eliminate allocation, value components are usually in registers (scalarization)
+// May eliminate allocation, value components are usually in registers (scalarization)
 
 
 // ## Value objects are:
