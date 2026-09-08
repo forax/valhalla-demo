@@ -258,7 +258,7 @@ new Product(new ProductId(5), "banana")   // pointer to a 96/128 bits payload
 sealed interface Vehicle permits Bus, Truck {}
 value record Bus(int passengers) {}
 value record Truck(int packets) {}
-void m(Vehicle vehicle) { /* boxed */ }
+void m(Vehicle vehicle /* boxed */) { }
 
 // No Flattening
 
