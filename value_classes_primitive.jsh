@@ -62,7 +62,7 @@ IO.println(Runtime.version());
 // Note: read/write _non-atomic_ implies _null-restricted_
 
 
-// ## Exploration: Null-restricted types
+// ## Exploration 1: Null-restricted types
 // Let's help flattening by adding nullability markers
 
 // '!' or '?' sigils at the end of a type
@@ -187,7 +187,7 @@ b.m(null);
 // Also those keywords are **implementation decisions**, not something the user should control
 
 
-// ## Exploration: Primitive classes
+// ## Exploration 2: Primitive classes
 // `primitive` implies `value`
 
 /*primitive*/ record Complex(double re, double im) {}
