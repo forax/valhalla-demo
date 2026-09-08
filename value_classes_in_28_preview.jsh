@@ -114,20 +114,11 @@ Object o = myFloat;
 synchronized (o) { }
 
 
-// ## Weak references do not work either!
-
-// A weak reference is a reference not followed by the garbage collector
-
-value record Cat(String name) { }
-var cat = new Cat("charly");
-var weakCat = new WeakReference<>(cat);
-
-
 // ## And hashCode()?
-// An **identity** class has a header, a **value** class has no header
+// An identity class has a header, a value class has **no header**
 
 /*value*/ class Pet {
-  /*final*/ String kind;
+  String kind;
   Pet(String kind) { this.kind = kind; }
 }
 
@@ -137,6 +128,15 @@ IO.println(Integer.toHexString(garfield.hashCode()));
 IO.println(Integer.toHexString(charly.hashCode()));
 
 // Uses the values of the fields to compute the 'default' hashCode()
+
+
+// ## Weak references do not work either!
+
+// A weak reference is a reference not followed by the garbage collector
+
+value record Cat(String name) { }
+var cat = new Cat("charly");
+var weakCat = new WeakReference<>(cat);
 
 
 // ## Value classes require Strict Initialization!
