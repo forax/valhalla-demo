@@ -181,7 +181,7 @@ b.m(null);
 
 // # Is declaring '!' at type level a good idea?
 
-// null-restricted or non-atomic looks more like storage keywords
+// null-restricted or non-atomic looks more like **storage** keywords
 // than markers on types
 
 // Also those keywords are **implementation decisions**, not something the user should control
