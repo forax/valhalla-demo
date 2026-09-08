@@ -270,7 +270,7 @@ class Car {
 }
 
 
-// ## Mandelbrot set
+// ## Example: Mandelbrot set
 // A two-dimensional set defined in the complex plane
 
 // ![Mandelbrot image](images/mandelbrot.png)
