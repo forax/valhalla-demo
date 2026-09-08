@@ -75,25 +75,28 @@ IO.println(Runtime.version());
 // ## Bang '!' as a contract
 // Extends Java to add '!' at the end of a type of a field
 
-value record Euro(long amount) {}
+value record Person(String name, int age) {}
 class Car {
-  Euro! price;
+  int seat;
+  Person! person;
 }
 
 
 // ## Fields with '!' have to be initialized before super()
 // A null-restricted field can **not be set** to 'null'
 
-value record Euro(long amount) {}
+value record Person(String name, int age) {}
 class Car {
-  Euro! price;
-  Car(Euro price) {
-    this.price = price;   // the VM can throw a NPE
+  int seat;
+  Person! person;
+  Car(Person person, int seat) {
+    this.person = person;   // the VM can throw a NPE
+    this.seat = seat;
     super();
   }
 }
 
-//new Car(null);
+//new Car(null, 5);
 
 
 // ## Flattening on Heap (with '!')
@@ -130,9 +133,10 @@ new Car(null);
 // The array elements **can not be initialized** to `null`
 
 // Without initial elements
+value record Euro(long amount) {}
 var array = new Euro![4];
 
-// Special syntax?
+// We need a special syntax?
 // ```java
 // new Complex![] (index -> new Complex(index, index))
 // ```
@@ -180,7 +184,7 @@ b.m(null);
 // null-restricted or non-atomic looks more like storage keywords
 // than markers on types
 
-// Those keywords are **implementation decisions**, not something the user should control
+// Also those keywords are **implementation decisions**, not something the user should control
 
 
 // ## Exploration: Primitive classes
@@ -193,8 +197,8 @@ class Holder {
   Holder() { }      // complex is initialized with Complex(0, 0)
 }
 
-// - Non-null on heap like primitives
 // - Non-atomic on heap like primitives (full flattening)
+// - Non-null on heap like primitives
 // - Have a default value like primitives (all fields at zero)
 
 
@@ -212,8 +216,8 @@ class Holder {
   }
 }
 
-// Not symmetric on stack and on heap:
-// like fields are initialized to the default value but not locals
+// Not symmetric stack vs heap:
+// like fields are initialized to the default value but not locals are not
 
 
 // ## And add a keyword `non-null` for value classes
@@ -243,6 +247,8 @@ record Holder(/*non-null*/ Point p) {
     Objects.requireNonNull(p);   // good practice
   }
 }
+
+// Should work with the component being value class or not!
 
 
 // ## In summary
