@@ -31,7 +31,7 @@ IO.println(Runtime.version());
 // # ... and beyond?
 // ` `
 
-// ... We are still in exploratory mode
+// ... we are still in exploratory mode
 
 
 // ## Challenges
@@ -136,7 +136,7 @@ new Car(null);
 value record Euro(long amount) {}
 var array = new Euro![4];
 
-// We need a special syntax?
+// We need a special syntax:
 // ```java
 // new Complex![] (index -> new Complex(index, index))
 // ```
