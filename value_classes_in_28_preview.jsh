@@ -248,7 +248,7 @@ value record Product(ProductId id, String name) {}
 
 new Product(new ProductId(5), "banana")   // pointer to a 96/128 bits payload
 
-// Not yet fully implemented
+// Not yet fully implemented yet!
 
 
 // ## How to NOT get scalarization/flattening ?
