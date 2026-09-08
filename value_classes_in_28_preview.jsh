@@ -106,8 +106,6 @@ static Point translate(Point p, int dx, int dy) {
 // ## Synchronized vs value class?
 // An **identity** class has a header, a **value** class has no header
 
-// A value class has no header
-
 value record MyFloat(float f) {}
 MyFloat myFloat = new MyFloat(3.14f);
 synchronized (myFloat) { }
