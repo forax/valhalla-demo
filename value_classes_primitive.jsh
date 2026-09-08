@@ -260,7 +260,7 @@ record Holder(/*non-null*/ Point p) {
 // | `value` class              | Java 28 Preview       |
 // | `!` null-restricted syntax | Failed experiment     |
 // | `primitive` class          | Future proposal       |
-// | `non-null`                 | Future proposal       |
+// | `non-null` field           | Future proposal       |
 // | parametric JVM             | Future direction      |
 // ```
 
@@ -274,7 +274,7 @@ record Holder(/*non-null*/ Point p) {
 
 // 🏗️ JEP 539: Strict Field Initialization in the JVM (Java 28 Preview)
 
-// 🚧 JEP Draft: Primitive Class?
+// 🚧 JEP Draft: Primitive Class + non-null fields?
 
 // ☁️ JEP 402: Enhanced Primitive Boxing (int ≈ Integer!)
 
