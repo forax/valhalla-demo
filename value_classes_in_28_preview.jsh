@@ -33,7 +33,7 @@ IO.println(Runtime.version());
 
 // - Zero-cost abstraction?
 // - Flat memory representation? (CPU friendly)
-// - Primitives are a nuisance
+// - Primitives are a nuisance!
 
 // ## Zero-cost abstraction
 
