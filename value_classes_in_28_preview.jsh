@@ -127,7 +127,7 @@ var charly = new Pet("cat");
 IO.println(Integer.toHexString(garfield.hashCode()));
 IO.println(Integer.toHexString(charly.hashCode()));
 
-// Uses the values of the fields to compute the 'default' hashCode()
+// A value class uses the values of the fields to compute the 'default' hashCode()
 
 
 // ## Weak references do not work either!
