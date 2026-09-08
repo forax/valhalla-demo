@@ -187,8 +187,8 @@ b.m(null);
 // Also those keywords are **implementation decisions**, not something the user should control
 
 
-// ## Exploration 2: Primitive classes
-// `primitive` implies `value`
+// ## Exploration 2: Primitive class
+// A value class that acts more like a `primitive`
 
 /*primitive*/ record Complex(double re, double im) {}
 
@@ -208,7 +208,7 @@ class Holder {
 class Holder {
   Complex c;   // strict non-null
   Holder(Complex c) {
-    Objects.requireNonNull(c);  // good practice
+    Objects.requireNonNull(c, "c is null");  // good practice
     this.c = c;
   }
   void f(Complex c) {  // nullable
@@ -227,7 +227,7 @@ value record Point(int x, int y) {}
 class Holder {
   /*non-null*/ Point p;  // null-check at runtime
   Holder(Point p) {
-    Objects.requireNonNull(p);   // good practice
+    Objects.requireNonNull(p, "p is null");   // good practice
     this.p = p;  // must be strictly initialized
     super();
   }
@@ -244,7 +244,7 @@ class Holder {
 value record Point(int x, int y) {}
 record Holder(/*non-null*/ Point p) {
   public Holder {
-    Objects.requireNonNull(p);   // good practice
+    Objects.requireNonNull(p, "p is null");   // good practice
   }
 }
 
