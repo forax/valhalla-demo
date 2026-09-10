@@ -1,5 +1,6 @@
 package benchmark;
 
+import jdk.internal.value.ValueClass;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -12,13 +13,35 @@ import org.openjdk.jmh.annotations.Warmup;
 
 import java.util.concurrent.TimeUnit;
 
+// Benchmark                                                   Mode  Cnt          Score    Error   Units
+//BlackHoleBench.renderWithIdentity                           avgt    5         52,593 ±  1,389   ms/op
+//BlackHoleBench.renderWithIdentity:gc.alloc.rate             avgt    5       2022,373 ± 53,553  MB/sec
+//BlackHoleBench.renderWithIdentity:gc.alloc.rate.norm        avgt    5  111536309,830 ±  9,108    B/op
+//BlackHoleBench.renderWithIdentity:gc.count                  avgt    5        128,000           counts
+//BlackHoleBench.renderWithIdentity:gc.time                   avgt    5         51,000               ms
+//BlackHoleBench.renderWithValue                              avgt    5         48,566 ±  1,727   ms/op
+//BlackHoleBench.renderWithValue:gc.alloc.rate                avgt    5          4,151 ±  0,147  MB/sec
+//BlackHoleBench.renderWithValue:gc.alloc.rate.norm           avgt    5     211368,714 ±  7,780    B/op
+//BlackHoleBench.renderWithValue:gc.count                     avgt    5            ≈ 0           counts
+//BlackHoleBench.renderWithValueFlatArray                     avgt    5         48,312 ±  1,441   ms/op
+//BlackHoleBench.renderWithValueFlatArray:gc.alloc.rate       avgt    5          4,172 ±  0,125  MB/sec
+//BlackHoleBench.renderWithValueFlatArray:gc.alloc.rate.norm  avgt    5     211368,343 ±  9,512    B/op
+//BlackHoleBench.renderWithValueFlatArray:gc.count            avgt    5            ≈ 0           counts
+
 @Warmup(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
-@Fork(value = 1, jvmArgs = { "--enable-preview" })
+@Fork(value = 1, jvmArgs = { "--enable-preview", "--add-exports=java.base/jdk.internal.value=ALL-UNNAMED" })
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Benchmark)
 public class BlackHoleBench {
+
+  static final int WIDTH = 80;
+  static final int HEIGHT = 60;
+
+  static final double DT = 0.05;         // Ray step size
+  static final double GM = 1.5;          // Gravity strength
+  static final double RS = 1.0;          // Event horizon radius
 
   static final class Value {
     value record Vec3(double x, double y, double z) {
@@ -36,25 +59,14 @@ public class BlackHoleBench {
     }
 
     value record Color(double r, double g, double b) {
+      static final Color BLACK = new Color(0, 0, 0);
+
       Color add(Color o) { return new Color(r + o.r, g + o.g, b + o.b); }
       Color mul(double s) { return new Color(r * s, g * s, b * s); }
-      Color clamp() {
-        return new Color(Math.clamp(r, 0, 1), Math.clamp(g, 0, 1), Math.clamp(b, 0, 1));
-      }
+      Color clamp() { return new Color(Math.clamp(r, 0, 1), Math.clamp(g, 0, 1), Math.clamp(b, 0, 1)); }
     }
 
-    static final int WIDTH = 80;
-    static final int HEIGHT = 60;
-
-    static final double DT = 0.05;         // Ray step size
-    static final double GM = 1.5;          // Gravity strength
-    static final double RS = 1.0;          // Event horizon radius
-
-    static Color[] generateBlackHole() {
-      var pixels = new Color[WIDTH * HEIGHT];
-      //var pixels = (Color[]) ValueClass.newNullRestrictedNonAtomicArray(Color.class,
-      //    WIDTH * HEIGHT, new Color(0, 0, 0));
-
+    static void generateBlackHole(Color[] pixels) {
       // Camera setup
       var camPos = new Vec3(0, 1.5, 7.0);
       var lookAt = new Vec3(0, 0, 0);
@@ -76,24 +88,23 @@ public class BlackHoleBench {
 
           var color = rayMarching(camPos, vel);
 
-          pixels[py * WIDTH + px] = color;
+          pixels[py * WIDTH + px] = color.clamp();
         }
       }
-      return pixels;
     }
 
     static Color rayMarching(Vec3 pos, Vec3 vel) {
-      var color = new Color(0, 0, 0);
+      var color = Color.BLACK;
 
       // Step the photon through the gravity field
       for (var step = 0; step < 400; step++) {
         var r = pos.mag();
 
         if (r < RS) {
-          return new Color(0, 0, 0); // Photon fell into the event horizon (black)
+          return Color.BLACK; // Photon fell into the event horizon
         }
         if (r > 20.0) {
-          return new Color(0, 0, 0); // Photon escaped to deep space
+          return Color.BLACK; // Photon escaped to deep space
         }
 
         // Calculate gravity acceleration: a = -GM / r^2 towards origin
@@ -149,25 +160,14 @@ public class BlackHoleBench {
     }
 
     record Color(double r, double g, double b) {
+      static final Color BLACK = new Color(0, 0, 0);
+
       Color add(Color o) { return new Color(r + o.r, g + o.g, b + o.b); }
       Color mul(double s) { return new Color(r * s, g * s, b * s); }
-      Color clamp() {
-        return new Color(Math.clamp(r, 0, 1), Math.clamp(g, 0, 1), Math.clamp(b, 0, 1));
-      }
+      Color clamp() { return new Color(Math.clamp(r, 0, 1), Math.clamp(g, 0, 1), Math.clamp(b, 0, 1)); }
     }
 
-    static final int WIDTH = 80;
-    static final int HEIGHT = 60;
-
-    static final double DT = 0.05;         // Ray step size
-    static final double GM = 1.5;          // Gravity strength
-    static final double RS = 1.0;          // Event horizon radius
-
-    static Color[] generateBlackHole() {
-      var pixels = new Color[WIDTH * HEIGHT];
-      //var pixels = (Color[]) ValueClass.newNullRestrictedNonAtomicArray(Color.class,
-      //    WIDTH * HEIGHT, new Color(0, 0, 0));
-
+    static void generateBlackHole(Color[] pixels) {
       // Camera setup
       var camPos = new Vec3(0, 1.5, 7.0);
       var lookAt = new Vec3(0, 0, 0);
@@ -189,24 +189,23 @@ public class BlackHoleBench {
 
           var color = rayMarching(camPos, vel);
 
-          pixels[py * WIDTH + px] = color;
+          pixels[py * WIDTH + px] = color.clamp();
         }
       }
-      return pixels;
     }
 
     static Color rayMarching(Vec3 pos, Vec3 vel) {
-      var color = new Color(0, 0, 0);
+      var color = Color.BLACK;
 
       // Step the photon through the gravity field
       for (var step = 0; step < 400; step++) {
         var r = pos.mag();
 
         if (r < RS) {
-          return new Color(0, 0, 0); // Photon fell into the event horizon (black)
+          return Color.BLACK; // Photon fell into the event horizon (black)
         }
         if (r > 20.0) {
-          return new Color(0, 0, 0); // Photon escaped to deep space
+          return Color.BLACK; // Photon escaped to deep space
         }
 
         // Calculate gravity acceleration: a = -GM / r^2 towards origin
@@ -248,11 +247,23 @@ public class BlackHoleBench {
 
   @Benchmark
   public Value.Color[] renderWithValue() {
-    return Value.generateBlackHole();
+    var pixels = new Value.Color[WIDTH * HEIGHT];
+    Value.generateBlackHole(pixels);
+    return pixels;
+  }
+
+  @Benchmark
+  public Value.Color[] renderWithValueFlatArray() {
+    var pixels = (Value.Color[]) ValueClass.newNullRestrictedNonAtomicArray(Value.Color.class,
+        WIDTH * HEIGHT, Value.Color.BLACK);
+    Value.generateBlackHole(pixels);
+    return pixels;
   }
 
   @Benchmark
   public Identity.Color[] renderWithIdentity() {
-    return Identity.generateBlackHole();
+    var pixels = new Identity.Color[WIDTH * HEIGHT];
+    Identity.generateBlackHole(pixels);
+    return pixels;
   }
 }
