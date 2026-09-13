@@ -13,6 +13,7 @@ import org.openjdk.jmh.annotations.Warmup;
 
 import java.util.concurrent.TimeUnit;
 
+// java -jar target/benchmarks.jar -prof gc
 // Benchmark                                                   Mode  Cnt          Score    Error   Units
 //BlackHoleBench.renderWithIdentity                           avgt    5         52,593 ±  1,389   ms/op
 //BlackHoleBench.renderWithIdentity:gc.alloc.rate             avgt    5       2022,373 ± 53,553  MB/sec
