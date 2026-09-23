@@ -102,10 +102,10 @@ public class BlackHoleBench {
         var r = pos.mag();
 
         if (r < RS) {
-          return Color.BLACK; // Photon fell into the event horizon
+          return color; // Photon fell into the event horizon
         }
         if (r > 20.0) {
-          return Color.BLACK; // Photon escaped to deep space
+          return color; // Photon escaped to deep space
         }
 
         // Calculate gravity acceleration: a = -GM / r^2 towards origin
@@ -203,10 +203,10 @@ public class BlackHoleBench {
         var r = pos.mag();
 
         if (r < RS) {
-          return Color.BLACK; // Photon fell into the event horizon (black)
+          return color; // Photon fell into the event horizon (black)
         }
         if (r > 20.0) {
-          return Color.BLACK; // Photon escaped to deep space
+          return color; // Photon escaped to deep space
         }
 
         // Calculate gravity acceleration: a = -GM / r^2 towards origin

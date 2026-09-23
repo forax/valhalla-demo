@@ -71,10 +71,10 @@ static Color rayMarching(Vec3 pos, Vec3 vel) {
     var r = pos.mag();
 
     if (r < RS) {
-      return new Color(0, 0, 0); // Photon fell into the event horizon (black)
+      return color; // Photon fell into the event horizon
     }
     if (r > 20.0) {
-      return new Color(0, 0, 0); // Photon escaped to deep space
+      return color; // Photon escaped to deep space
     }
 
     // Calculate gravity acceleration: a = -GM / r^2 towards origin
