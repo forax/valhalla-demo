@@ -18,7 +18,48 @@ import java.util.stream.IntStream;
 
 // java -jar target/benchmarks.jar -prof gc
 
-// Benchmark                                                         Mode  Cnt     Score     Error   Units
+// Xeon(R) CPU E5-2683 v4 @ 2.10GHz
+//Benchmark                                                         Mode  Cnt     Score     Error   Units
+//PlayListBench.identityFullSongObject                              avgt    5   431.049 ±  73.446   ns/op
+//PlayListBench.identityFullSongPrimitive                           avgt    5    72.097 ±   3.423   ns/op
+//PlayListBench.identityFullSongReduce                              avgt    5   647.751 ±  99.281   ns/op
+//PlayListBench.valueFullSongObject                                 avgt    5   128.540 ±   0.107   ns/op
+//PlayListBench.valueFullSongPrimitive                              avgt    5   124.161 ±   0.116   ns/op
+//PlayListBench.valueFullSongReduce                                 avgt    5  6930.126 ± 766.630   ns/op
+//PlayListBench.valueNoFlatteningFullSongObject                     avgt    5    63.795 ±   0.284   ns/op
+//PlayListBench.valueNoFlatteningFullSongReduce                     avgt    5   658.346 ± 101.971   ns/op
+
+//PlayListBench.identityFullSongObject:gc.alloc.rate                avgt    5  3579.812 ± 577.552  MB/sec
+//PlayListBench.identityFullSongObject:gc.count                     avgt    5    51.000            counts
+//PlayListBench.identityFullSongObject:gc.time                      avgt    5    72.000                ms
+
+//PlayListBench.identityFullSongPrimitive:gc.alloc.rate             avgt    5   211.625 ±   9.935  MB/sec
+//PlayListBench.identityFullSongPrimitive:gc.count                  avgt    5     9.000            counts
+//PlayListBench.identityFullSongPrimitive:gc.time                   avgt    5    18.000                ms
+
+//PlayListBench.identityFullSongReduce:gc.alloc.rate                avgt    5  2558.609 ± 397.773  MB/sec
+//PlayListBench.identityFullSongReduce:gc.count                     avgt    5    11.000            counts
+//PlayListBench.identityFullSongReduce:gc.time                      avgt    5    32.000                ms
+
+//PlayListBench.valueFullSongObject:gc.alloc.rate                   avgt    5     0.003 ±   0.001  MB/sec
+//PlayListBench.valueFullSongObject:gc.count                        avgt    5       ≈ 0            counts
+
+//PlayListBench.valueFullSongPrimitive:gc.alloc.rate                avgt    5     0.003 ±   0.001  MB/sec
+//PlayListBench.valueFullSongPrimitive:gc.count                     avgt    5       ≈ 0            counts
+
+//PlayListBench.valueFullSongReduce:gc.alloc.rate                   avgt    5   459.275 ±  50.589  MB/sec
+//PlayListBench.valueFullSongReduce:gc.count                        avgt    5     2.000            counts
+//PlayListBench.valueFullSongReduce:gc.time                         avgt    5     6.000                ms
+
+//PlayListBench.valueNoFlatteningFullSongObject:gc.alloc.rate       avgt    5     0.003 ±   0.001  MB/sec
+//PlayListBench.valueNoFlatteningFullSongObject:gc.count            avgt    5       ≈ 0            counts
+
+//PlayListBench.valueNoFlatteningFullSongReduce:gc.alloc.rate       avgt    5  2517.432 ± 389.752  MB/sec
+//PlayListBench.valueNoFlatteningFullSongReduce:gc.count            avgt    5    11.000            counts
+//PlayListBench.valueNoFlatteningFullSongReduce:gc.time             avgt    5    24.000                ms
+
+// MacBook Air M2
+//Benchmark                                                         Mode  Cnt     Score     Error   Units
 //PlayListBench.identityFullSongObject                              avgt    5   211,903 ±  21,437   ns/op
 //PlayListBench.identityFullSongPrimitive                           avgt    5    42,748 ±   1,097   ns/op
 //PlayListBench.identityFullSongReduce                              avgt    5   320,026 ±   3,429   ns/op
