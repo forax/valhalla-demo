@@ -29,6 +29,7 @@ import java.util.concurrent.TimeUnit;
 //BlackHoleBench.renderWithValueFlatArray:gc.alloc.rate.norm  avgt    5     211368,343 ±  9,512    B/op
 //BlackHoleBench.renderWithValueFlatArray:gc.count            avgt    5            ≈ 0           counts
 
+/*
 @Warmup(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Fork(value = 1, jvmArgs = { "--enable-preview", "--add-exports=java.base/jdk.internal.value=ALL-UNNAMED" })
@@ -268,3 +269,4 @@ public class BlackHoleBench {
     return pixels;
   }
 }
+*/
