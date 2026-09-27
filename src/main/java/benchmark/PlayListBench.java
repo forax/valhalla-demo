@@ -20,90 +20,91 @@ import java.util.stream.IntStream;
 
 // Xeon(R) CPU E5-2683 v4 @ 2.10GHz
 //Benchmark                                                         Mode  Cnt     Score     Error   Units
-//PlayListBench.identityFullSongObject                              avgt    5   431.049 ±  73.446   ns/op
-//PlayListBench.identityFullSongPrimitive                           avgt    5    72.097 ±   3.423   ns/op
-//PlayListBench.identityFullSongReduce                              avgt    5   647.751 ±  99.281   ns/op
-//PlayListBench.valueFullSongObject                                 avgt    5   128.540 ±   0.107   ns/op
-//PlayListBench.valueFullSongPrimitive                              avgt    5   124.161 ±   0.116   ns/op
-//PlayListBench.valueFullSongReduce                                 avgt    5  6930.126 ± 766.630   ns/op
-//PlayListBench.valueNoFlatteningFullSongObject                     avgt    5    63.795 ±   0.284   ns/op
-//PlayListBench.valueNoFlatteningFullSongReduce                     avgt    5   658.346 ± 101.971   ns/op
+//PlayListBench.identityMixTapeObject                              avgt    5   431.049 ±  73.446   ns/op
+//PlayListBench.identityMixTapePrimitive                           avgt    5    72.097 ±   3.423   ns/op
+//PlayListBench.identityMixTapeReduce                              avgt    5   647.751 ±  99.281   ns/op
+//PlayListBench.valueMixTapeObject                                 avgt    5   128.540 ±   0.107   ns/op
+//PlayListBench.valueMixTapePrimitive                              avgt    5   124.161 ±   0.116   ns/op
+//PlayListBench.valueMixTapeReduce                                 avgt    5  6930.126 ± 766.630   ns/op
+//PlayListBench.valueNoFlatteningMixTapeObject                     avgt    5    63.795 ±   0.284   ns/op
+//PlayListBench.valueNoFlatteningMixTapeReduce                     avgt    5   658.346 ± 101.971   ns/op
 
-//PlayListBench.identityFullSongObject:gc.alloc.rate                avgt    5  3579.812 ± 577.552  MB/sec
-//PlayListBench.identityFullSongObject:gc.count                     avgt    5    51.000            counts
-//PlayListBench.identityFullSongObject:gc.time                      avgt    5    72.000                ms
+//PlayListBench.identityMixTapeObject:gc.alloc.rate                avgt    5  3579.812 ± 577.552  MB/sec
+//PlayListBench.identityMixTapeObject:gc.count                     avgt    5    51.000            counts
+//PlayListBench.identityMixTapeObject:gc.time                      avgt    5    72.000                ms
 
-//PlayListBench.identityFullSongPrimitive:gc.alloc.rate             avgt    5   211.625 ±   9.935  MB/sec
-//PlayListBench.identityFullSongPrimitive:gc.count                  avgt    5     9.000            counts
-//PlayListBench.identityFullSongPrimitive:gc.time                   avgt    5    18.000                ms
+//PlayListBench.identityMixTapePrimitive:gc.alloc.rate             avgt    5   211.625 ±   9.935  MB/sec
+//PlayListBench.identityMixTapePrimitive:gc.count                  avgt    5     9.000            counts
+//PlayListBench.identityMixTapePrimitive:gc.time                   avgt    5    18.000                ms
 
-//PlayListBench.identityFullSongReduce:gc.alloc.rate                avgt    5  2558.609 ± 397.773  MB/sec
-//PlayListBench.identityFullSongReduce:gc.count                     avgt    5    11.000            counts
-//PlayListBench.identityFullSongReduce:gc.time                      avgt    5    32.000                ms
+//PlayListBench.identityMixTapeReduce:gc.alloc.rate                avgt    5  2558.609 ± 397.773  MB/sec
+//PlayListBench.identityMixTapeReduce:gc.count                     avgt    5    11.000            counts
+//PlayListBench.identityMixTapeReduce:gc.time                      avgt    5    32.000                ms
 
-//PlayListBench.valueFullSongObject:gc.alloc.rate                   avgt    5     0.003 ±   0.001  MB/sec
-//PlayListBench.valueFullSongObject:gc.count                        avgt    5       ≈ 0            counts
+//PlayListBench.valueMixTapeObject:gc.alloc.rate                   avgt    5     0.003 ±   0.001  MB/sec
+//PlayListBench.valueMixTapeObject:gc.count                        avgt    5       ≈ 0            counts
 
-//PlayListBench.valueFullSongPrimitive:gc.alloc.rate                avgt    5     0.003 ±   0.001  MB/sec
-//PlayListBench.valueFullSongPrimitive:gc.count                     avgt    5       ≈ 0            counts
+//PlayListBench.valueMixTapePrimitive:gc.alloc.rate                avgt    5     0.003 ±   0.001  MB/sec
+//PlayListBench.valueMixTapePrimitive:gc.count                     avgt    5       ≈ 0            counts
 
-//PlayListBench.valueFullSongReduce:gc.alloc.rate                   avgt    5   459.275 ±  50.589  MB/sec
-//PlayListBench.valueFullSongReduce:gc.count                        avgt    5     2.000            counts
-//PlayListBench.valueFullSongReduce:gc.time                         avgt    5     6.000                ms
+//PlayListBench.valueMixTapeReduce:gc.alloc.rate                   avgt    5   459.275 ±  50.589  MB/sec
+//PlayListBench.valueMixTapeReduce:gc.count                        avgt    5     2.000            counts
+//PlayListBench.valueMixTapeReduce:gc.time                         avgt    5     6.000                ms
 
-//PlayListBench.valueNoFlatteningFullSongObject:gc.alloc.rate       avgt    5     0.003 ±   0.001  MB/sec
-//PlayListBench.valueNoFlatteningFullSongObject:gc.count            avgt    5       ≈ 0            counts
+//PlayListBench.valueNoFlatteningMixTapeObject:gc.alloc.rate       avgt    5     0.003 ±   0.001  MB/sec
+//PlayListBench.valueNoFlatteningMixTapeObject:gc.count            avgt    5       ≈ 0            counts
 
-//PlayListBench.valueNoFlatteningFullSongReduce:gc.alloc.rate       avgt    5  2517.432 ± 389.752  MB/sec
-//PlayListBench.valueNoFlatteningFullSongReduce:gc.count            avgt    5    11.000            counts
-//PlayListBench.valueNoFlatteningFullSongReduce:gc.time             avgt    5    24.000                ms
+//PlayListBench.valueNoFlatteningMixTapeReduce:gc.alloc.rate       avgt    5  2517.432 ± 389.752  MB/sec
+//PlayListBench.valueNoFlatteningMixTapeReduce:gc.count            avgt    5    11.000            counts
+//PlayListBench.valueNoFlatteningMixTapeReduce:gc.time             avgt    5    24.000                ms
 
 // MacBook Air M2
 //Benchmark                                                         Mode  Cnt     Score     Error   Units
-//PlayListBench.identityFullSongObject                              avgt    5   211,903 ±  21,437   ns/op
-//PlayListBench.identityFullSongPrimitive                           avgt    5    42,748 ±   1,097   ns/op
-//PlayListBench.identityFullSongReduce                              avgt    5   320,026 ±   3,429   ns/op
-//PlayListBench.valueFullSongObject                                 avgt    5    58,261 ±   0,598   ns/op
-//PlayListBench.valueFullSongPrimitive                              avgt    5    57,730 ±   0,780   ns/op
-//PlayListBench.valueFullSongReduce                                 avgt    5  3289,558 ±  34,361   ns/op
-//PlayListBench.valueNoFlatteningFullSongObject                     avgt    5    40,944 ±   0,475   ns/op
-//PlayListBench.valueNoFlatteningFullSongReduce                     avgt    5   348,372 ±   4,759   ns/op
+//PlayListBench.identityMixTapeObject                              avgt    5   211,903 ±  21,437   ns/op
+//PlayListBench.identityMixTapePrimitive                           avgt    5    42,748 ±   1,097   ns/op
+//PlayListBench.identityMixTapeReduce                              avgt    5   320,026 ±   3,429   ns/op
+//PlayListBench.valueMixTapeObject                                 avgt    5    58,261 ±   0,598   ns/op
+//PlayListBench.valueMixTapePrimitive                              avgt    5    57,730 ±   0,780   ns/op
+//PlayListBench.valueMixTapeReduce                                 avgt    5  3289,558 ±  34,361   ns/op
+//PlayListBench.valueNoFlatteningMixTapePrimitive                  avgt    5    40,723 ±   0,437   ns/op
+//PlayListBench.valueNoFlatteningMixTapeObject                     avgt    5    40,944 ±   0,475   ns/op
+//PlayListBench.valueNoFlatteningMixTapeReduce                     avgt    5   348,372 ±   4,759   ns/op
 
-//PlayListBench.identityFullSongObject:gc.alloc.rate                avgt    5  7276,198 ± 713,408  MB/sec
-//PlayListBench.identityFullSongObject:gc.count                     avgt    5   204,000            counts
-//PlayListBench.identityFullSongObject:gc.time                      avgt    5    87,000                ms
+//PlayListBench.identityMixTapeObject:gc.alloc.rate                avgt    5  7276,198 ± 713,408  MB/sec
+//PlayListBench.identityMixTapeObject:gc.count                     avgt    5   204,000            counts
+//PlayListBench.identityMixTapeObject:gc.time                      avgt    5    87,000                ms
 
-//PlayListBench.identityFullSongPrimitive                           avgt    5    42,748 ±   1,097   ns/op
-//PlayListBench.identityFullSongPrimitive:gc.alloc.rate             avgt    5   356,933 ±   9,090  MB/sec
-//PlayListBench.identityFullSongPrimitive:gc.count                  avgt    5   138,000            counts
-//PlayListBench.identityFullSongPrimitive:gc.time                   avgt    5    25,000                ms
+//PlayListBench.identityMixTapePrimitive                           avgt    5    42,748 ±   1,097   ns/op
+//PlayListBench.identityMixTapePrimitive:gc.alloc.rate             avgt    5   356,933 ±   9,090  MB/sec
+//PlayListBench.identityMixTapePrimitive:gc.count                  avgt    5   138,000            counts
+//PlayListBench.identityMixTapePrimitive:gc.time                   avgt    5    25,000                ms
 
-//PlayListBench.identityFullSongReduce                              avgt    5   320,026 ±   3,429   ns/op
-//PlayListBench.identityFullSongReduce:gc.alloc.rate                avgt    5  5172,941 ±  55,504  MB/sec
-//PlayListBench.identityFullSongReduce:gc.count                     avgt    5   125,000            counts
-//PlayListBench.identityFullSongReduce:gc.time                      avgt    5    53,000                ms
+//PlayListBench.identityMixTapeReduce                              avgt    5   320,026 ±   3,429   ns/op
+//PlayListBench.identityMixTapeReduce:gc.alloc.rate                avgt    5  5172,941 ±  55,504  MB/sec
+//PlayListBench.identityMixTapeReduce:gc.count                     avgt    5   125,000            counts
+//PlayListBench.identityMixTapeReduce:gc.time                      avgt    5    53,000                ms
 
-//PlayListBench.valueFullSongObject                                 avgt    5    58,261 ±   0,598   ns/op
-//PlayListBench.valueFullSongObject:gc.alloc.rate                   avgt    5     0,003 ±   0,001  MB/sec
-//PlayListBench.valueFullSongObject:gc.count                        avgt    5       ≈ 0            counts
+//PlayListBench.valueMixTapeObject                                 avgt    5    58,261 ±   0,598   ns/op
+//PlayListBench.valueMixTapeObject:gc.alloc.rate                   avgt    5     0,003 ±   0,001  MB/sec
+//PlayListBench.valueMixTapeObject:gc.count                        avgt    5       ≈ 0            counts
 
-//PlayListBench.valueFullSongPrimitive                              avgt    5    57,730 ±   0,780   ns/op
-//PlayListBench.valueFullSongPrimitive:gc.alloc.rate                avgt    5     0,003 ±   0,001  MB/sec
-//PlayListBench.valueFullSongPrimitive:gc.count                     avgt    5       ≈ 0            counts
+//PlayListBench.valueMixTapePrimitive                              avgt    5    57,730 ±   0,780   ns/op
+//PlayListBench.valueMixTapePrimitive:gc.alloc.rate                avgt    5     0,003 ±   0,001  MB/sec
+//PlayListBench.valueMixTapePrimitive:gc.count                     avgt    5       ≈ 0            counts
 
-//PlayListBench.valueFullSongReduce                                 avgt    5  3289,558 ±  34,361   ns/op
-//PlayListBench.valueFullSongReduce:gc.alloc.rate                   avgt    5   967,025 ±  10,381  MB/sec
-//PlayListBench.valueFullSongReduce:gc.count                        avgt    5    60,000            counts
-//PlayListBench.valueFullSongReduce:gc.time                         avgt    5    22,000                ms
+//PlayListBench.valueMixTapeReduce                                 avgt    5  3289,558 ±  34,361   ns/op
+//PlayListBench.valueMixTapeReduce:gc.alloc.rate                   avgt    5   967,025 ±  10,381  MB/sec
+//PlayListBench.valueMixTapeReduce:gc.count                        avgt    5    60,000            counts
+//PlayListBench.valueMixTapeReduce:gc.time                         avgt    5    22,000                ms
 
-//PlayListBench.valueNoFlatteningFullSongObject                     avgt    5    40,944 ±   0,475   ns/op
-//PlayListBench.valueNoFlatteningFullSongObject:gc.alloc.rate       avgt    5     0,003 ±   0,001  MB/sec
-//PlayListBench.valueNoFlatteningFullSongObject:gc.count            avgt    5       ≈ 0            counts
+//PlayListBench.valueNoFlatteningMixTapeObject                     avgt    5    40,944 ±   0,475   ns/op
+//PlayListBench.valueNoFlatteningMixTapeObject:gc.alloc.rate       avgt    5     0,003 ±   0,001  MB/sec
+//PlayListBench.valueNoFlatteningMixTapeObject:gc.count            avgt    5       ≈ 0            counts
 
-//PlayListBench.valueNoFlatteningFullSongReduce                     avgt    5   348,372 ±   4,759   ns/op
-//PlayListBench.valueNoFlatteningFullSongReduce:gc.alloc.rate       avgt    5  4751,954 ±  64,399  MB/sec
-//PlayListBench.valueNoFlatteningFullSongReduce:gc.count            avgt    5   220,000            counts
-//PlayListBench.valueNoFlatteningFullSongReduce:gc.time             avgt    5    85,000                ms
+//PlayListBench.valueNoFlatteningMixTapeReduce                     avgt    5   348,372 ±   4,759   ns/op
+//PlayListBench.valueNoFlatteningMixTapeReduce:gc.alloc.rate       avgt    5  4751,954 ±  64,399  MB/sec
+//PlayListBench.valueNoFlatteningMixTapeReduce:gc.count            avgt    5   220,000            counts
+//PlayListBench.valueNoFlatteningMixTapeReduce:gc.time             avgt    5    85,000                ms
 
 @Warmup(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
@@ -134,7 +135,7 @@ public class PlayListBench {
       }
     }
 
-    static Song fullSongPrimitive(PlayList playList) {
+    static Song mixTapePrimitive(PlayList playList) {
       var duration = (short) 0;
       for (var i = 0; i < playList.size(); i++) {
         duration += playList.get(i).duration;
@@ -142,16 +143,16 @@ public class PlayListBench {
       return new Song(playList.title, duration);
     }
 
-    static Song fullSongObject(PlayList playList) {
-      var fullSong = new Song(playList.title, (short) 0);
+    static Song mixTapeObject(PlayList playList) {
+      var mixTape = new Song(playList.title, (short) 0);
       for (var i = 0; i < playList.size(); i++) {
-        fullSong = new Song(fullSong.title,
-            (short) (fullSong.duration + playList.get(i).duration));
+        mixTape = new Song(mixTape.title,
+            (short) (mixTape.duration + playList.get(i).duration));
       }
-      return fullSong;
+      return mixTape;
     }
 
-    static Song fullSongReduce(PlayList playList) {
+    static Song mixTapeReduce(PlayList playList) {
       return Arrays.stream(playList.songs)
           .reduce(new Song(playList.title, (short) 0),
               (a, b) -> new Song(playList.title, (short) (a.duration + b.duration)));
@@ -179,7 +180,7 @@ public class PlayListBench {
       }
     }
 
-    static Song fullSongPrimitive(PlayList playList) {
+    static Song mixTapePrimitive(PlayList playList) {
       var duration = (short) 0;
       for (var i = 0; i < playList.size(); i++) {
         duration += playList.get(i).duration;
@@ -187,16 +188,16 @@ public class PlayListBench {
       return new Song(playList.title, duration);
     }
 
-    static Song fullSongObject(PlayList playList) {
-      var fullSong = new Song(playList.title, (short) 0);
+    static Song mixTapeObject(PlayList playList) {
+      var mixTape = new Song(playList.title, (short) 0);
       for (var i = 0; i < playList.size(); i++) {
-        fullSong = new Song(fullSong.title,
-            (short) (fullSong.duration + playList.get(i).duration));
+        mixTape = new Song(mixTape.title,
+            (short) (mixTape.duration + playList.get(i).duration));
       }
-      return fullSong;
+      return mixTape;
     }
 
-    static Song fullSongReduce(PlayList playList) {
+    static Song mixTapeReduce(PlayList playList) {
       return Arrays.stream(playList.songs)
           .reduce(new Song(playList.title, (short) 0),
               (a, b) -> new Song(playList.title, (short) (a.duration + b.duration)));
@@ -219,28 +220,33 @@ public class PlayListBench {
   }
 
   @Benchmark
-  public Value.Song valueFullSongPrimitive() {
-    return Value.fullSongPrimitive(valuePlayList);
+  public Value.Song valueMixTapePrimitive() {
+    return Value.mixTapePrimitive(valuePlayList);
   }
 
   @Benchmark
-  public Value.Song valueFullSongObject() {
-    return Value.fullSongObject(valuePlayList);
+  public Value.Song valueMixTapeObject() {
+    return Value.mixTapeObject(valuePlayList);
   }
 
   @Benchmark
-  public Value.Song valueFullSongReduce() {
-    return Value.fullSongReduce(valuePlayList);
+  public Value.Song valueMixTapeReduce() {
+    return Value.mixTapeReduce(valuePlayList);
   }
 
   @Benchmark
-  public Value.Song valueNoFlatteningFullSongObject() {
-    return Value.fullSongObject(valueNoFlatteningPlayList);
+  public Value.Song valueNoFlatteningMixTapePrimitive() {
+    return Value.mixTapePrimitive(valueNoFlatteningPlayList);
   }
 
   @Benchmark
-  public Value.Song valueNoFlatteningFullSongReduce() {
-    return Value.fullSongReduce(valueNoFlatteningPlayList);
+  public Value.Song valueNoFlatteningMixTapeObject() {
+    return Value.mixTapeObject(valueNoFlatteningPlayList);
+  }
+
+  @Benchmark
+  public Value.Song valueNoFlatteningMixTapeReduce() {
+    return Value.mixTapeReduce(valueNoFlatteningPlayList);
   }
 
   private final Identity.PlayList identityPlayList = new Identity.PlayList("80s", IntStream.range(0, 100)
@@ -248,18 +254,18 @@ public class PlayListBench {
       .toArray(Identity.Song[]::new));
 
   @Benchmark
-  public Identity.Song identityFullSongPrimitive() {
-    return Identity.fullSongPrimitive(identityPlayList);
+  public Identity.Song identityMixTapePrimitive() {
+    return Identity.mixTapePrimitive(identityPlayList);
   }
 
   @Benchmark
-  public Identity.Song identityFullSongObject() {
-    return Identity.fullSongObject(identityPlayList);
+  public Identity.Song identityMixTapeObject() {
+    return Identity.mixTapeObject(identityPlayList);
   }
 
   @Benchmark
-  public Identity.Song identityFullSongReduce() {
-    return Identity.fullSongReduce(identityPlayList);
+  public Identity.Song identityMixTapeReduce() {
+    return Identity.mixTapeReduce(identityPlayList);
   }
 }
 
