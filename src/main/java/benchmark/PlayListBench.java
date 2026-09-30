@@ -26,6 +26,7 @@ import java.util.stream.IntStream;
 //PlayListBench.valueMixTapeObject                                 avgt    5   128.540 ±   0.107   ns/op
 //PlayListBench.valueMixTapePrimitive                              avgt    5   124.161 ±   0.116   ns/op
 //PlayListBench.valueMixTapeReduce                                 avgt    5  6930.126 ± 766.630   ns/op
+//PlayListBench.valueNoFlatteningMixTapePrimitive                  avgt    5    64.056 ±   0.346   ns/op
 //PlayListBench.valueNoFlatteningMixTapeObject                     avgt    5    63.795 ±   0.284   ns/op
 //PlayListBench.valueNoFlatteningMixTapeReduce                     avgt    5   658.346 ± 101.971   ns/op
 
@@ -51,6 +52,9 @@ import java.util.stream.IntStream;
 //PlayListBench.valueMixTapeReduce:gc.count                        avgt    5     2.000            counts
 //PlayListBench.valueMixTapeReduce:gc.time                         avgt    5     6.000                ms
 
+//PlayListBench.valueNoFlatteningMixTapePrimitive:gc.alloc.rate    avgt    5     0.003 ?    0.001  MB/sec
+//PlayListBench.valueNoFlatteningMixTapePrimitive:gc.count         avgt    5       ≈ 0             counts
+
 //PlayListBench.valueNoFlatteningMixTapeObject:gc.alloc.rate       avgt    5     0.003 ±   0.001  MB/sec
 //PlayListBench.valueNoFlatteningMixTapeObject:gc.count            avgt    5       ≈ 0            counts
 
@@ -74,34 +78,27 @@ import java.util.stream.IntStream;
 //PlayListBench.identityMixTapeObject:gc.count                     avgt    5   204,000            counts
 //PlayListBench.identityMixTapeObject:gc.time                      avgt    5    87,000                ms
 
-//PlayListBench.identityMixTapePrimitive                           avgt    5    42,748 ±   1,097   ns/op
 //PlayListBench.identityMixTapePrimitive:gc.alloc.rate             avgt    5   356,933 ±   9,090  MB/sec
 //PlayListBench.identityMixTapePrimitive:gc.count                  avgt    5   138,000            counts
 //PlayListBench.identityMixTapePrimitive:gc.time                   avgt    5    25,000                ms
 
-//PlayListBench.identityMixTapeReduce                              avgt    5   320,026 ±   3,429   ns/op
 //PlayListBench.identityMixTapeReduce:gc.alloc.rate                avgt    5  5172,941 ±  55,504  MB/sec
 //PlayListBench.identityMixTapeReduce:gc.count                     avgt    5   125,000            counts
 //PlayListBench.identityMixTapeReduce:gc.time                      avgt    5    53,000                ms
 
-//PlayListBench.valueMixTapeObject                                 avgt    5    58,261 ±   0,598   ns/op
 //PlayListBench.valueMixTapeObject:gc.alloc.rate                   avgt    5     0,003 ±   0,001  MB/sec
 //PlayListBench.valueMixTapeObject:gc.count                        avgt    5       ≈ 0            counts
 
-//PlayListBench.valueMixTapePrimitive                              avgt    5    57,730 ±   0,780   ns/op
 //PlayListBench.valueMixTapePrimitive:gc.alloc.rate                avgt    5     0,003 ±   0,001  MB/sec
 //PlayListBench.valueMixTapePrimitive:gc.count                     avgt    5       ≈ 0            counts
 
-//PlayListBench.valueMixTapeReduce                                 avgt    5  3289,558 ±  34,361   ns/op
 //PlayListBench.valueMixTapeReduce:gc.alloc.rate                   avgt    5   967,025 ±  10,381  MB/sec
 //PlayListBench.valueMixTapeReduce:gc.count                        avgt    5    60,000            counts
 //PlayListBench.valueMixTapeReduce:gc.time                         avgt    5    22,000                ms
 
-//PlayListBench.valueNoFlatteningMixTapeObject                     avgt    5    40,944 ±   0,475   ns/op
 //PlayListBench.valueNoFlatteningMixTapeObject:gc.alloc.rate       avgt    5     0,003 ±   0,001  MB/sec
 //PlayListBench.valueNoFlatteningMixTapeObject:gc.count            avgt    5       ≈ 0            counts
 
-//PlayListBench.valueNoFlatteningMixTapeReduce                     avgt    5   348,372 ±   4,759   ns/op
 //PlayListBench.valueNoFlatteningMixTapeReduce:gc.alloc.rate       avgt    5  4751,954 ±  64,399  MB/sec
 //PlayListBench.valueNoFlatteningMixTapeReduce:gc.count            avgt    5   220,000            counts
 //PlayListBench.valueNoFlatteningMixTapeReduce:gc.time             avgt    5    85,000                ms
@@ -268,4 +265,5 @@ public class PlayListBench {
     return Identity.mixTapeReduce(identityPlayList);
   }
 }
+
 
