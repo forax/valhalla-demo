@@ -22,6 +22,30 @@ import java.util.stream.IntStream;
 
 // java -jar target/benchmarks.jar -prof gc
 
+// Xeon(R) CPU E5-2683 v4 @ 2.10GHz
+//Benchmark                                               (arrayLength)  Mode  Cnt        Score        Error  Units
+//PlayListFlatteningBench.identityMixTapePrimitive                  100  avgt    5       71.805 ±      3.407  ns/op
+//PlayListFlatteningBench.identityMixTapePrimitive                 1000  avgt    5      993.584 ±     43.966  ns/op
+//PlayListFlatteningBench.identityMixTapePrimitive                10000  avgt    5    20280.178 ±    401.236  ns/op
+//PlayListFlatteningBench.identityMixTapePrimitive               100000  avgt    5   212504.226 ±  19021.351  ns/op
+//PlayListFlatteningBench.identityMixTapePrimitive              1000000  avgt    5  7578279.428 ±  53575.320  ns/op
+//PlayListFlatteningBench.valueMixTapeObject                        100  avgt    5      129.680 ±      0.266  ns/op
+//PlayListFlatteningBench.valueMixTapeObject                       1000  avgt    5     1203.405 ±      5.206  ns/op
+//PlayListFlatteningBench.valueMixTapeObject                      10000  avgt    5    11231.185 ±     71.869  ns/op
+//PlayListFlatteningBench.valueMixTapeObject                     100000  avgt    5   128277.728 ±  17904.514  ns/op
+//PlayListFlatteningBench.valueMixTapeObject                    1000000  avgt    5  1346210.425 ±  90182.375  ns/op
+//PlayListFlatteningBench.valueMixTapePrimitive                     100  avgt    5      125.295 ±      0.075  ns/op
+//PlayListFlatteningBench.valueMixTapePrimitive                    1000  avgt    5     1202.251 ±      4.785  ns/op
+//PlayListFlatteningBench.valueMixTapePrimitive                   10000  avgt    5    12043.989 ±    287.158  ns/op
+//PlayListFlatteningBench.valueMixTapePrimitive                  100000  avgt    5   130601.255 ±  12947.919  ns/op
+//PlayListFlatteningBench.valueMixTapePrimitive                 1000000  avgt    5  1192768.007 ±   1413.961  ns/op
+//PlayListFlatteningBench.valueNoFlatteningMixTapeObject            100  avgt    5       64.491 ±      0.196  ns/op
+//PlayListFlatteningBench.valueNoFlatteningMixTapeObject           1000  avgt    5      969.445 ±     31.721  ns/op
+//PlayListFlatteningBench.valueNoFlatteningMixTapeObject          10000  avgt    5    21190.143 ±     99.167  ns/op
+//PlayListFlatteningBench.valueNoFlatteningMixTapeObject         100000  avgt    5   218990.027 ±   2818.897  ns/op
+//PlayListFlatteningBench.valueNoFlatteningMixTapeObject        1000000  avgt    5  7887826.631 ± 150406.302  ns/op
+
+// MacBook Air M2
 //Benchmark                                               (arrayLength)  Mode  Cnt        Score       Error  Units
 //PlayListFlatteningBench.identityMixTapePrimitive                  100  avgt    5       42,689 ±     0,700  ns/op
 //PlayListFlatteningBench.identityMixTapePrimitive                 1000  avgt    5      567,601 ±    21,706  ns/op

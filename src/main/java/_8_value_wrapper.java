@@ -6,4 +6,6 @@ void main() {
 
   IO.println(i1 == i2);
   IO.println(i1.equals(i2));
+
+  // synchronized(i1)
 }

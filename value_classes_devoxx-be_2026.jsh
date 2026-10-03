@@ -697,11 +697,14 @@ String s = null;   // Invalid in Kotlin, valid in Java
 // We want to be backward compatible, so '!' can not be used in method selection
 
 // ```java
-// class A { void m(Object o) {} }
-// class B extends A { void m(Euro! c) {} }
-//
-// B b = new B();
-// b.m(null);
+// class MediaPlayer {
+//  void play(Object item) {}
+// }
+// class MusicPlayer extends MediaPlayer {
+//   void play(Song! song) {}
+// }
+// MusicPlayer player = new MusicPlayer();
+// player.play(null);
 // ```
 
 // # Is declaring '!' at type level a good idea?
