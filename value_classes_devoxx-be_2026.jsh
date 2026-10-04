@@ -774,16 +774,8 @@ var array = new Complex[10];
 
 // primitive class instance on stack can be `null`
 
-class MyMap extends AbstractMap<String, Complex> {
-  public int size() { return 1; }
-  public Complex get(Object o) {
-    return o.equals("foo") ? new Complex(1, 2) : null;
-  }
-  public Set<Map.Entry<String, Complex>> entrySet() {
-    return Set.of(Map.entry("foo", new Complex(1, 2)));
-  }
-}
-
+var map = new HashMap<String, Complex>();
+map.put("foo", new Complex(1, 2));
 var complex = new MyMap().get("bar");
 IO.println(complex);     // complex is null
 
