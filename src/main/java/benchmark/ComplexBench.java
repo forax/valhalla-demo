@@ -17,18 +17,18 @@ import java.util.stream.IntStream;
 
 // java -jar target/benchmarks.jar -prof gc
 
-//Benchmark                          Mode  Cnt    Score   Error  Units
-//ComplexBench.identitySumObject     avgt    5  345,363 ± 6,427  ns/op
-//ComplexBench.identitySumPrimitive  avgt    5   59,500 ± 1,924  ns/op
-//ComplexBench.identitySumReduce     avgt    5   59,665 ± 1,321  ns/op
-//ComplexBench.valueSumObject        avgt    5   49,497 ± 1,009  ns/op
-//ComplexBench.valueSumPrimitive     avgt    5   49,484 ± 1,385  ns/op
-//ComplexBench.valueSumReduce        avgt    5   49,441 ± 1,127  ns/op
+//Benchmark                          Mode  Cnt     Score    Error  Units
+//ComplexBench.identitySumObject     avgt    5   346,278 ±  1,804  ns/op
+//ComplexBench.identitySumPrimitive  avgt    5    60,797 ±  0,865  ns/op
+//ComplexBench.identitySumReduce     avgt    5   369,301 ±  1,921  ns/op
+//ComplexBench.valueSumObject        avgt    5    50,466 ±  0,846  ns/op
+//ComplexBench.valueSumPrimitive     avgt    5    50,278 ±  0,165  ns/op
+//ComplexBench.valueSumReduce        avgt    5  2820,367 ± 27,865  ns/op
 
 /*
 @Warmup(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
-@Fork(value = 1, jvmArgs = { "--enable-preview", "--add-exports=java.base/jdk.internal.value=ALL-UNNAMED", "--add-exports=java.base/jdk.internal.value=ALL-UNNAMED" })
+@Fork(value = 1, jvmArgs = { "--enable-preview", "--add-exports=java.base/jdk.internal.value=ALL-UNNAMED" })
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Benchmark)
@@ -153,7 +153,7 @@ public class ComplexBench {
 
   @Benchmark
   public Value.Complex valueSumReduce() {
-    return Value.sumPrimitive(valueComplexList);
+    return Value.sumReduce(valueComplexList);
   }
 
   private final Identity.ComplexList identityComplexList = new Identity.ComplexList(IntStream.range(0, 100)
@@ -172,7 +172,7 @@ public class ComplexBench {
 
   @Benchmark
   public Identity.Complex identitySumReduce() {
-    return Identity.sumPrimitive(identityComplexList);
+    return Identity.sumReduce(identityComplexList);
   }
 }
 */
