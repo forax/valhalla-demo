@@ -103,7 +103,6 @@ import java.util.stream.IntStream;
 //PlayListBench.valueNoFlatteningMixTapeReduce:gc.count            avgt    5   220,000            counts
 //PlayListBench.valueNoFlatteningMixTapeReduce:gc.time             avgt    5    85,000                ms
 
-
 @Warmup(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
 @Fork(value = 1, jvmArgs = { "--enable-preview", "--add-exports=java.base/jdk.internal.value=ALL-UNNAMED" })
@@ -266,5 +265,6 @@ public class PlayListBench {
     return Identity.mixTapeReduce(identityPlayList);
   }
 }
+
 
 
