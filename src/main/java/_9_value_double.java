@@ -7,8 +7,8 @@ void main() {
 
   IO.println(notANumber == notANumber2);
 
-  var d1 = new Double(notANumber);
-  var d2 = new Double(notANumber2);
+  var d1 = Double.valueOf(notANumber);
+  var d2 = Double.valueOf(notANumber2);
 
   IO.println(d1 == d1);
   IO.println(d1 == d2);
